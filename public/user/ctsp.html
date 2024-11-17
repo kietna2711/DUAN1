@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="ctsp.css">
+    <link rel="stylesheet" href="footer.css">
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Product Detail</title>
+        <style>
+        </style>
+    </head>
+
+    <body>
+
+
+        <header>
+            <div class="top-section">
+                <a href="#" class="logo"><img src="img/Beauty_Clinic_with_woman_inside_logo_template-removebg-preview.png" alt="" width="200px" height="150px"></a>
+                <div class="search-container">
+                    <input type="text" id="search-bar" placeholder="Bạn cần tìm gì ...?" class="search-bar">
+                    <i class="fa fa-search search-icon"></i>
+                    <a href="#" class="search-icon"><i class="icon-search"></i></a>
+                </div>
+                <div class="right-icons">
+                    <a href="dndk.html"><img src="img/user-removebg-preview.png" alt=""></a>
+                    <a href="#"><img src="img/love-removebg-preview.png" alt=""></a>
+                    <a href="#"><img src="img/giohang-removebg-preview.png" alt=""></i></a>
+                </div>
+            </div>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li class="has-submenu">
+                        <a href="#">Nhóm sản phẩm</a>
+                        <ul class="submenu">
+                            <li><a href="danhmuc.html">Chống lão hóa</a></li>
+                            <li><a href="#">Skincare</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#">Sản phẩm hot</a>
+                        <ul class="submenu">
+                            <li><a href="ctsp.html">AGELESS Total Repair Crème</a></li>
+                            <li><a href="#">AGELESS Total Retinol A Crème</a></li>
+                            <li><a href="#">PREVENTION+ Ultra Sheer Spray SPF45+</a></li>
+                            <li><a href="#">Image The MAX Stem Cell Crème</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Tin tức nổi bật</a></li>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li><a href="lienhe.html">Liên hệ</a></li>
+                </ul>
+                <img src="img/3gach.png" alt="menu" class="menu-sp">
+            </nav>
+        </header>
+        <div class="tong">
+            <div class="product-container">
+                <div class="flash-sale">
+                    <img src="img/sale.gif" alt="Sale Icon"> <span id="flashSaleTimer">Loading...</span>
+                    <a href="danhmuc.html">Xem toàn bộ sản phẩm flash-sale</a>
+                </div>
+
+                <div class="sanphamchinh">
+                    <div class="sanpham2">
+                        <img id="anhtong" src="img/ctsp.webp" alt="Main Product Image">
+                        <div class="sanphamphu">
+                            <img src="img/ctsp.webp" alt="Thumbnail 1" onclick="changeImage('img/ctsp.webp')"
+                                class="active">
+                            <img src="img/ctsp1.webp" alt="Thumbnail 2" onclick="changeImage('img/ctsp1.webp')">
+                            <img src="img/ctsp2.webp" alt="Thumbnail 3" onclick="changeImage('img/ctsp2.webp')">
+                            <img src="img/ctsp3.webp" alt="Thumbnail 4" onclick="changeImage('img/ctsp3.webp')">
+                        </div>
+                    </div>
+                    <div class="gioithieu">
+                        <h1 class="gioithieu1">Kem Dưỡng Da Mặt Trẻ Hóa Da Image The MAX Stem Cell Crème</h1>
+                        <div class="thuonghieu">
+                            <div class="thuonghieu1">
+                                <ul>
+                                    <li><strong>Mã sản phẩm:</strong> Đang cập nhật</li>
+                                    <li><strong>Thương hiệu:</strong> IMAGE</li>
+                                </ul>
+                            </div>
+                            <div class="th1">
+                                <ul>
+                                    <li><strong>Barcode:</strong> Đang cập nhật</li>
+                                    <li><strong>Dòng sản phẩm:</strong> Kem Dưỡng Da Mặt</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p class="giagoc">3,705,000 </p>
+                        <span class="price-sale"> 3,220,000</span>
+                        <p class="tk"> Tiết kiệm 14%</p>
+                        <div class="size">
+                            <P>Quy Cách</P><button>48g</button>
+                            <button>142g</button>
+                        </div>
+                        <div class="quantity-wrapper">
+                            <p>Số Lượng</p>
+                            <div class="quantity">
+                                <button onclick="changeQuantity(-1)">-</button>
+                                <input type="number" id="quantity" value="1" min="1">
+                                <button onclick="changeQuantity(1)">+</button>
+                            </div>
+                        </div>
+                        
+                        <div class="muathem">
+                            Mua thêm <span>500,000</span> để được miễn phí giao hàng trên toàn quốc
+                        </div>
+                        <div class="add-to-cart-section">
+                            <div class="add-to-cart">
+                                <p>THÊM VÀO GIỎ</p>
+                                <span>Chọn ngay sản phẩm bạn yêu thích</span>
+                            </div>
+                            <div class="other-actions">
+                                <div class="button consult">
+                                    <p>TƯ VẤN</p>
+                                    <span>Tư vấn thiết kế nội thất tùy chọn</span>
+                                </div>
+                                <div class="button contact">
+                                    <p>LIÊN HỆ</p>
+                                    <span>Chúng tôi luôn bên bạn 24/7</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-section">
+                    <h2>Sản phẩm liên quan</h2>
+                    <div class="product-list">
+                        <div class="sanpham">
+                            <div class="sanpham1">15%</div>
+                            <img src="img/rm1.webp" alt="Sản phẩm 1" class="anh1hover">
+                            <img src="img/rm2.webp" alt="Sản phẩm 1 Hover" class="anh2hover">
+                            <div class="hover-content">
+                                <div class="xn">Xem nhanh</div>
+                                <div class="sanpham1">15%</div>
+                            </div>
+                            <div class="giohang">Thêm vào giỏ</div>
+                            <div class="gt">Serum Trẻ Hoá Da Chống Lão Hoá Image MD Restoring...</div>
+                            <div class="gia">
+                                <span class="giamgia">3,000,000₫</span>
+                                <span class="giamseo">3,321,000₫</span>
+                            </div>
+                        </div>
+                        <div class="sanpham">
+                            <div class="sanpham1">14%</div>
+                            <img src="img/rm3.webp" alt="" class="anh1hover">
+                            <img src="img/rm4.webp" alt="" class="anh2hover">
+                            <div class="hover-content">
+                                <div class="xn">Xem nhanh</div>
+                                <div class="sanpham1">14%</div>
+                            </div>
+                            <div class="giohang">Thêm vào giỏ</div>
+                            <div class="gt">Kem Dưỡng Body Trẻ Hóa Da Toàn Thân Image BODY SPA Rejuvenating Body Lotion
+                            </div>
+                            <div class="gia">
+                                <span class="giamgia">1,400,000₫</span>
+                                <span class="giamseo">1,190,000₫</span>
+                            </div>
+                        </div>
+                        <div class="sanpham">
+                            <div class="sanpham1">14%</div>
+                            <img src="img/rm5.webp" alt="" class="anh1hover">
+                            <img src="img/rm6.webp" alt="" class="anh2hover">
+                            <div class="hover-content">
+                                <div class="xn">Xem nhanh</div>
+                                <div class="sanpham1">14%</div>
+                            </div>
+                            <div class="giohang">Thêm vào giỏ</div>
+                            <div class="gt">Kem Dưỡng Da Mặt Chống Lão Hóa Image AGELESS Total Repair Crème</div>
+                            <div class="gia">
+                                <span class="giamgia">2,500,000₫</span>
+                                <span class="giamseo">2,190,000₫</span>
+                            </div>
+                        </div>
+
+
+                        <div class="sanpham">
+                            <div class="sanpham1">14%</div>
+                            <img src="img/rm7.webp" alt="" class="anh1hover">
+                            <img src="img/rm8.webp" alt="" class="anh2hover">
+                            <div class="hover-content">
+                                <div class="xn">Xem nhanh</div>
+                                <div class="sanpham1">14%</div>
+                            </div>
+                            <div class="giohang">Thêm vào giỏ</div>
+                            <div class="gt">Kem Dưỡng Da Mặt Phục Hồi Da Image Irescue Post Treatment Recovery Balm
+                            </div>
+                            <div class="gia">
+                                <span class="giamgia">2,100,000₫</span>
+                                <span class="giamseo">1,760,000₫</span>
+                            </div>
+                        </div>
+
+                        <div class="sanpham">
+                            <div class="sanpham1">14%</div>
+                            <img src="img/rm9.webp" alt="" class="anh1hover">
+                            <img src="img/rm10.webp" alt="" class="anh2hover">
+                            <div class="hover-content">
+                                <div class="xn">Xem nhanh</div>
+                                <div class="sanpham1">14%</div>
+                            </div>
+                            <div class="giohang">Thêm vào giỏ</div>
+                            <div class="gt">Kem Dưỡng Da Mặt Phục Hồi Và Chống Lão Hóa Image MD Restoring Youth Repair
+                                Crème</div>
+                            <div class="gia">
+                                <span class="giamgia">3,400,000₫</span>
+                                <span class="giamseo">2,930,000₫</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="itemtong">
+                    <a href=""><div class="item1"><span>Mô tả sản phẩm</span></div></a>
+                    <a href=""><div class="item">Chính sách bảo mật</div></a>
+                    <a href=""><div class="item">Chính sách đổi trả</div></a>
+                    <a href=""><div class="item">Điều khoản dịch vụ</div></a>
+                    </div>
+
+                    </div>
+                    <div class="description-container">
+                        <p>Nội dung đang được cập nhật</p>
+                    </div>
+                    <h2>Sản phẩm đã xem</h2>
+                    <div class="product-list">
+                        <div class="sanpham">
+                            <div class="sanpham1">14%</div>
+                            <img src="img/rm11.webp" alt="" class="anh1hover">
+                            <img src="img/rm12.webp" alt="" class="anh2hover">
+                            <div class="hover-content">
+                                <div class="xn">Xem nhanh</div>
+                                <div class="sanpham1">14%</div>
+                            </div>
+                            <div class="giohang">Thêm vào giỏ</div>
+                            <div class="gt">Kem Dưỡng Da Mặt Trẻ Hóa Da Image AGELESS Total Retinol A Crème</div>
+                            <div class="gia">
+                                <span class="giamgia">2,500,000₫</span>
+                                <span class="giamseo">2,160,000₫</span>
+                            </div>
+                        </div>
+
+
+
+                        <div class="sanpham">
+                            <div class="sanpham1">14%</div>
+                            <img src="img/rm13.webp" alt="" class="anh1hover">
+                            <img src="img/rm14.webp" alt="" class="anh2hover">
+                            <div class="hover-content">
+                                <div class="xn">Xem nhanh</div>
+                                <div class="sanpham1">14%</div>
+                            </div>
+                            <div class="giohang">Thêm vào giỏ</div>
+                            <div class="gt">Kem Dưỡng Da Mặt Trẻ Hóa Da Image The MAX Stem Cell Crème</div>
+                            <div class="gia">
+                                <span class="giamgia">3,705,000₫</span>
+                                <span class="giamseo">3,220,000₫</span>
+                            </div>
+                        </div>
+
+                        <div class="sanpham">
+                            <div class="sanpham1">14%</div>
+                            <img src="img/rm15.webp" alt="" class="anh1hover">
+                            <img src="img/rm16.webp" alt="" class="anh2hover">
+                            <div class="hover-content">
+                                <div class="xn">Xem nhanh</div>
+                                <div class="sanpham1">14%</div>
+                            </div>
+                            <div class="giohang">Thêm vào giỏ</div>
+                            <div class="gt">Serum Trẻ Hóa Da Chống Lão Hóa Image The MAX Stem Cell Serum</div>
+                            <div class="gia">
+                                <span class="giamgia">3,700,000₫</span>
+                                <span class="giamseo">3,185,000₫</span>
+                            </div>
+                        </div>
+
+                        <div class="sanpham">
+                            <div class="sanpham1">14%</div>
+                            <img src="img/rm5.webp" alt="" class="anh1hover">
+                            <img src="img/rm6.webp" alt="" class="anh2hover">
+                            <div class="hover-content">
+                                <div class="xn">Xem nhanh</div>
+                                <div class="sanpham1">14%</div>
+                            </div>
+                            <div class="giohang">Thêm vào giỏ</div>
+                            <div class="gt">Kem Dưỡng Da Mặt Chống Lão Hóa Image AGELESS Total Repair Crème</div>
+                            <div class="gia">
+                                <span class="giamgia">2,500,000₫</span>
+                                <span class="giamseo">2,190,000₫</span>
+                            </div>
+                        </div>
+
+
+                        <div class="sanpham">
+                            <div class="sanpham1">14%</div>
+                            <img src="img/rm3.webp" alt="" class="anh1hover">
+                            <img src="img/rm4.webp" alt="" class="anh2hover">
+                            <div class="hover-content">
+                                <div class="xn">Xem nhanh</div>
+                                <div class="sanpham1">14%</div>
+                            </div>
+                            <div class="giohang">Thêm vào giỏ</div>
+                            <div class="gt">Kem Dưỡng Body Trẻ Hóa Da Toàn Thân Image BODY SPA Rejuvenating Body Lotion
+                            </div>
+                            <div class="gia">
+                                <span class="giamgia">1,400,000₫</span>
+                                <span class="giamseo">1,190,000₫</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <img src="img/Beauty_Clinic_with_woman_inside_logo_template-removebg-preview.png" alt="">
+                    <p>Cosmetiy luôn cam kết, đảm bảo bàn giao sản phẩm đạt chất lượng tối ưu nhất đến tay người dùng.</p>
+                </div>
+                
+                <!-- Contact Section -->
+                <div class="footer-section">
+                    <h3>Liên hệ</h3>
+                    <p>Tư vấn dịch vụ: 1900636099</p>
+                    <p>Hỗ trợ sử dụng: 1900636099</p>
+                    <p>Hỗ trợ vận chuyển: 1900636099</p>
+                    <p>Email: support@sapo.vn</p>
+                    <p>7h00 – 22h00 các ngày từ thứ 2 đến Chủ nhật</p>
+                </div>
+            
+                <!-- About Us Section -->
+                <div class="footer-section">
+                    <h3>Về chúng tôi</h3>
+                    <ul>
+                        <li><a href="#">Giới thiệu</a></li>
+                        <li><a href="#">Chính sách đổi trả</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Điều khoản dịch vụ</a></li>
+                    </ul>
+                </div>
+            
+                <!-- Categories Section -->
+                <div class="footer-section">
+                    <h3>Danh mục</h3>
+                    <ul>
+                        <li><a href="#">Mỹ phẩm</a></li>
+                        <li><a href="#">Chống lão hóa</a></li>
+                        <li><a href="#">Bổ sung Collagen</a></li>
+                        <li><a href="#">Skincare</a></li>
+                        <li><a href="#">Chống nếp nhăn</a></li>
+                    </ul>
+                </div>
+            
+                <!-- Social Media Section -->
+                <div class="footer-social">
+                    <h3>Liên hệ với chúng tôi</h3>
+                    <p>Luôn cập nhật tất cả các hành động mà chúng tôi đã lưu cho tất cả khách hàng của mình.</p>
+                    <div class="social-icons">
+                        <a href="#"><img src="img/fb.webp" alt="Facebook"></a>
+                        <a href="#"><img src="img/ytb.webp" alt="YouTube"></a>
+                        <a href="#"><img src="img/pinterest.webp" alt="Pinterest"></a>
+                        <a href="#"><img src="img/tiktok.webp" alt="TikTok"></a>
+                        <a href="#"><img src="img/instagram.webp" alt="TikTok"></a>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>© 2024 - Bản quyền thuộc về F1GENZ TECHNOLOGY CO., LTD. Powered by Haravan</p>
+                <div class="payment-icons">
+                    <img src="img/visa.webp" alt="Visa">
+                    <img src="img/payment.webp" alt="PayPal">
+                    <img src="img/payments.png" alt="Amex">
+                    <img src="img/payment1.webp" alt="Bitcoin">
+                    <img src="img/payment2.webp" alt="Bitcoin">
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            // Countdown Timer for Flash Sale
+            function startCountdown(durationDays) {
+                const countdownElement = document.getElementById("flashSaleTimer");
+                let countdownDate = new Date().getTime() + durationDays * 24 * 60 * 60 * 1000;
+
+                const interval = setInterval(function () {
+                    let now = new Date().getTime();
+                    let distance = countdownDate - now;
+
+                    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    countdownElement.innerHTML = `${days} Ngày ${hours} Giờ ${minutes} Phút ${seconds} Giây`;
+
+                    // If the countdown is over, stop the timer
+                    if (distance < 0) {
+                        clearInterval(interval);
+                        countdownElement.innerHTML = "Hết thời gian";
+                    }
+                }, 1000);
+            }
+
+            // Start countdown with 149 days
+            startCountdown(149);
+
+            // Image switcher
+            function changeImage(src) {
+                document.getElementById('anhtong').src = src;
+                const thumbnails = document.querySelectorAll('.sanphamphu img');
+                thumbnails.forEach(img => img.classList.remove('active'));
+                document.querySelector(`.sanphamphu img[src="${src}"]`).classList.add('active');
+            }
+
+            // Quantity adjustment
+            function changeQuantity(amount) {
+                const quantityInput = document.getElementById('quantity');
+                let newQuantity = parseInt(quantityInput.value) + amount;
+                quantityInput.value = newQuantity > 0 ? newQuantity : 1;
+            }
+
+        </script>
+    </body>
+
+    </html>
+
+</body>
+
+</html>

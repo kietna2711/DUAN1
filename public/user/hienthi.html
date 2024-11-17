@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Chủ</title>
+    <style>
+        /* Nội dung của trang web chính */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .popup {
+            width: 900px;
+            height: 300px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: space-between;
+            position: fixed; /* Cố định popup trên màn hình */
+            top: 50%; /* Vị trí popup ở giữa màn hình */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000; /* Đảm bảo popup nằm trên cùng */
+            align-items: center;
+            display: none; /* Ẩn popup ban đầu */
+        }
+
+        .popup-content {
+            width: 60%;
+            text-align: center;
+        }
+
+        .popup h2 {
+            color: #f26194;
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .popup p {
+            color: #444;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .popup input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .popup button {
+            width: 100%;
+            padding: 12px;
+            background-color: #f26194;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .popup button:hover {
+            background-color: #e0487d;
+        }
+
+        .popup img {
+            width: 150px;
+            border-radius: 10px;
+        }
+
+        .popup .image-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45%;
+            height: auto;
+        }
+
+        .popup .close {
+            position: absolute;
+            top: 0px;
+            right: -1px;
+            background-color: transparent;
+            border: none;
+            font-size: 15px;
+            cursor: pointer;
+        }
+   
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h1>Chào mừng đến với Trang Web Chính</h1>
+        <p>Nội dung trang web của bạn ở đây...</p>
+    </div>
+
+    <!-- Popup đăng ký nhận tin -->
+    <div class="popup" id="popup">
+        <button class="close">&times;</button>
+        <div class="popup-content">
+            <h2>ĐĂNG KÝ NHẬN TIN</h2>
+            <p>Để lại thông tin, để nhận ngay khuyến mãi từ chúng tôi nhé!</p>
+            <input type="email" placeholder="Nhập địa chỉ email của bạn...">
+            <button>ĐĂNG KÝ NHẬN TIN</button>
+        </div>
+        <div class="image-container">
+            <img src="img/shop_modal_contact_image_large.webp" alt="" height="200px" width="400px">
+        </div>
+    </div>
+
+    <script>
+        // script.js
+window.onload = function() {
+    var popup = document.getElementById("popup");
+
+    // Giả định có một biến để kiểm tra trạng thái đăng nhập
+    var isLoggedIn = true; // Giả định người dùng đã đăng nhập (thay đổi theo thực tế của bạn)
+
+    // Hiển thị popup nếu người dùng đã đăng nhập
+    if (isLoggedIn) {
+        popup.style.display = "flex";
+    }
+
+    // Đóng popup khi nhấn vào nút 'x'
+    var closeBtn = document.getElementsByClassName("close")[0];
+    closeBtn.onclick = function() {
+        popup.style.display = "none";
+    }
+
+    // Đóng popup khi nhấn ra ngoài vùng popup
+    window.onclick = function(event) {
+        if (event.target == popup) {
+            popup.style.display = "none";
+        }
+    }
+}
+
+    </script>
+</body>
+
+</html>
