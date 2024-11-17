@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+   <nav id="sidebar">
+        <ul>
+            <li>
+                <img class="logo" src="./img/logo.jpg" alt="">
+            </li>
+            <li class="active">
+                <a href="home.html" class="active1">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Trang chủ Admin</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="User.html">
+                    <i class="fa-solid fa-user-gear"></i>
+                    <span>Quản lí Tài khoản</span>
+                </a>
+            </li>
+            <li>
+                <button onclick="toggleSuMenu(this)" class="dropdown-btn">
+                    <i class="fa-solid fa-list"></i>
+                    <span>Quản lí sản phẩm</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <ul class="sub-menu">
+                    <li><a href="category.html">Danh mục</a></li>
+                    <li><a href="#">Sản phẩm</a></li>
+                </ul>
+            </li>
+            <li class="active">
+                <a href="#">
+                    <i class="fa-solid fa-clipboard"></i>
+                    <span>Quản lí đơn hàng</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="#">
+                    <i class="fa-solid fa-barcode"></i>
+                    <span>Quản lí mã giảm giá</span>
+                </a>
+            </li>  
+        </ul>
+    </nav>
+    <main>
+        <div class="header">
+            <input class="search" type="text" name="" id="" placeholder="Tìm kiếm">
+            <div class="about-us">
+                <p>Tên Admin</p>    
+                <img src="./img/avata.jpg" alt="">
+            </div>
+        </div>
+        <div class="table">
+            <h1>Quản lý người dùng</h1>
+            <table id="userTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tên người dùng</th>
+                        <th>Số điện thoại</th>
+                        <th>Email</th>
+                        <th>Địa chỉ</th>
+                        <th>Vai trò</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Nguyễn Văn A</td>
+                        <td>0123456789</td>
+                        <td>a@example.com</td>
+                        <td>Hà Nội, Việt Nam</td>
+                        <td>
+                            <select name="" id="">
+                                <option value="Khách">Khách</option>
+                                <option value="Khách">Khách mời</option>
+                            </select>
+                        </td>
+                        <td><button class="btn">Sửa</button></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Nguyễn Anh Kiệt</td>
+                        <td>0987654321</td>
+                        <td>b@example.com</td>
+                        <td>TP.HCM, Việt Nam</td>
+                        <td></td>
+                        <td><button class="btn">Sửa</button></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Lê Văn C</td>
+                        <td>0912345678</td>
+                        <td>c@example.com</td>
+                        <td>Đà Nẵng, Việt Nam</td>
+                        <td>
+                            <select name="" id="">
+                                <option value="Khách">Khách</option>
+                                <option value="Khách">Khách mời</option>
+                            </select>
+                        </td>
+                        <td><button class="btn">Sửa</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <script>
+        const menuStylenone = document.querySelectorAll('#sidebar a');
+        const menuStyletow = document.querySelectorAll('#sidebar a');
+        
+
+        // Function to handle the active class toggle
+        menuStylenone.forEach(item => {
+            item.addEventListener('click', function() {
+                // Remove the 'active' class from all items
+                menuStylenone.forEach(i => i.classList.remove('active1'));
+                // Add the 'active' class to the clicked item
+                this.classList.add('active1');
+            });
+        });
+        menuStylentow.forEach(item => {
+            item.addEventListener('click', function() {
+                // Remove the 'active' class from all items
+                menuStylentow.forEach(i => i.classList.remove('active1'));
+                // Add the 'active' class to the clicked item
+                this.classList.add('active1');
+            });
+        });
+
+        function toggleSuMenu(button) {
+            button.nextElementSibling.classList.toggle('show');
+            button.classList.toggle('rotate');
+            if (sidebar.classList.contains('close')) {
+                sidebar.classList.toggle('close');
+                toggleButton.classList.toggle('rotate');
+            }
+        }
+    </script>
+</body>
+</html>

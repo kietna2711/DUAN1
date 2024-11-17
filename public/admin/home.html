@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+   <nav id="sidebar">
+        <ul>
+            <li>
+                <img class="logo" src="./img/logo.jpg" alt="">
+            </li>
+            <li class="active">
+                <a href="home.html" class="active1">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Trang chủ Admin</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="User.html">
+                    <i class="fa-solid fa-user-gear"></i>
+                    <span>Quản lí Tài khoản</span>
+                </a>
+            </li>
+            <li>
+                <button onclick="toggleSuMenu(this)" class="dropdown-btn">
+                    <i class="fa-solid fa-list"></i>
+                    <span>Quản lí danh mục</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <ul class="sub-menu">
+                    <li><a href="category.html">Danh mục</a></li>
+                    <li><a href="#">Sản phẩm</a></li>
+                </ul>
+            </li>
+            <li class="active">
+                <a href="#">
+                    <i class="fa-solid fa-clipboard"></i>
+                    <span>Quản lí đơn hàng</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="#">
+                    <i class="fa-solid fa-barcode"></i>
+                    <span>Quản lí mã giảm giá</span>
+                </a>
+            </li>  
+        </ul>
+    </nav>
+    <main>
+        <div class="header">
+            <input class="search" type="text" name="" id="" placeholder="Tìm kiếm">
+            <div class="about-us">
+                <p>Tên Admin</p>    
+                <img src="./img/avata.jpg" alt="">
+            </div>
+        </div>
+        <div class="hello">
+            <h1>Chào mừng bạn đến với Bình nguyên của những giất mơ</h1>
+            <p>Tại đây bạn có thể thực hiện mọi thứ.</p>
+            <div class="overview">
+                <div class="stat-box">Tổng Số Người Dùng: 200</div>
+                <div class="stat-box">Tổng Số Đơn Hàng: 150</div>
+                <div class="stat-box">Tổng Doanh Thu: 1 tỷ</div>
+            </div>
+        </div>
+        <div class="chart">
+            <h2>Biểu đồ doanh thu bán hàng trong tháng</h2>
+            <div class="chart-container">
+                <canvas id="salesChart"></canvas>
+            </div>
+        </div>
+    </main>
+    <script>
+        const menuStylenone = document.querySelectorAll('#sidebar a');
+        const menuStyletow = document.querySelectorAll('#sidebar a');
+        
+
+        // Function to handle the active class toggle
+        menuStylenone.forEach(item => {
+            item.addEventListener('click', function() {
+                // Remove the 'active' class from all items
+                menuStylenone.forEach(i => i.classList.remove('active1'));
+                // Add the 'active' class to the clicked item
+                this.classList.add('active1');
+            });
+        });
+        menuStylentow.forEach(item => {
+            item.addEventListener('click', function() {
+                // Remove the 'active' class from all items
+                menuStylentow.forEach(i => i.classList.remove('active1'));
+                // Add the 'active' class to the clicked item
+                this.classList.add('active1');
+            });
+        });
+
+        function toggleSuMenu(button) {
+            button.nextElementSibling.classList.toggle('show');
+            button.classList.toggle('rotate');
+            if (sidebar.classList.contains('close')) {
+                sidebar.classList.toggle('close');
+                toggleButton.classList.toggle('rotate');
+            }
+        }
+    </script>
+    <script>
+        // Dữ liệu mẫu cho biểu đồ doanh số bán hàng trong 12 tháng
+        const salesData = {
+            labels: ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12'],
+            datasets: [{
+                label: 'Doanh số bán hàng',
+                data: [150, 200, 180, 220, 240, 300, 270, 310, 280, 330, 350, 400],
+                borderColor: '#3e95cd',
+                backgroundColor: 'rgba(62, 149, 205, 0.2)', // Màu nền dưới đường
+                borderWidth: 2,
+                pointRadius: 4, // Đường kính của điểm
+                pointBackgroundColor: '#3e95cd', // Màu nền của điểm
+                pointBorderColor: '#ffffff', // Màu viền của điểm
+                lineTension: 0.4, // Làm mịn đường nối
+                fill: true,
+            }]
+        };
+
+        // Cấu hình cho biểu đồ
+        const config = {
+            type: 'line',
+            data: salesData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        ticks: {
+                            color: '#333333', // Màu chữ của nhãn trục X
+                        },
+                        grid: {
+                            color: '#e0e0e0', // Màu của lưới trục X
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            color: '#333333', // Màu chữ của nhãn trục Y
+                        },
+                        grid: {
+                            color: '#e0e0e0', // Màu của lưới trục Y
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false // Ẩn chú thích
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(0, 0, 0, 0.8)', // Màu nền của tooltip
+                        titleColor: '#ffffff', // Màu chữ của tiêu đề tooltip
+                        bodyColor: '#ffffff', // Màu chữ của nội dung tooltip
+                        mode: 'index', // Hiển thị tooltip khi trỏ vào từng dữ liệu
+                        intersect: false // Tắt hiển thị tooltip khi trỏ vào vùng nền dưới đường
+                    },
+                    title: {
+                        display: true,
+                        text: 'Doanh số bán hàng',
+                        color: '#333333',
+                        font: {
+                            size: 20,
+                            weight: 'bold'
+                        },
+                        padding: {
+                            top: 10,
+                            bottom: 20
+                        }
+                    }
+                }
+            }
+        };
+
+        // Khởi tạo biểu đồ
+        const salesChart = new Chart(
+            document.getElementById('salesChart'),
+            config
+        );
+    </script>
+</body>
+</html>
