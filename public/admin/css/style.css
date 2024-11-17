@@ -157,6 +157,9 @@ main{
     border-radius: 1em;
     margin-bottom: 20px;
 }
+.hello h1{
+    margin-bottom: 20px;
+}
 .hello p{
     margin-bottom: 20px;
 }
@@ -188,7 +191,7 @@ main{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 .title a{
     text-align: center;
@@ -209,12 +212,6 @@ main{
     width: 100%;
     margin: 50px auto;
 }
-
-.table h1 {
-    text-align: center;
-    color: #333;
-}
-
 table {
     width: 100%;
     border-collapse: collapse;
@@ -265,6 +262,7 @@ th {
     border: 0px;
 }
 .btn-i i{
+    margin: 0 8px;
     font-size: 20px;
 }
 select {
