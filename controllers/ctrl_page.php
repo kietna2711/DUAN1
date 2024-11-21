@@ -11,13 +11,21 @@ if (isset($_GET['view'])) {
             include_once "views/user/v_home.php";
             include_once "views/user/t_footer.php";
             break;
-        case 'lienhe':
-            include_once "views/user/t_header.php";
+        case 'blog':
+            include_once "views/user/t_header1.php";
+            include_once "views/user/v_blog.php";
             include_once "views/user/t_footer.php";
             break;    
-        case 'gioithieu':
-            include_once "views/user/t_header.php";
+        case 'introduce':
+            include_once "views/user/t_header1.php";
+            include_once "views/user/v_introduce.php";
             include_once "views/user/t_footer.php";
+            break;
+        case 'contact':
+            include_once "views/user/t_header1.php";
+            include_once "views/user/v_contact.php";
+            include_once "views/user/t_footer.php";
+            break;
         default:
             echo "TRang không tồn tại";
             break;

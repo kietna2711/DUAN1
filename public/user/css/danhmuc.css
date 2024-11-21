@@ -27,7 +27,7 @@ button {
     left: 0;
   }
   header{
-    position: sticky; /* Để menu dính vào đầu trang */
+
     top: 0; /* Vị trí dính */
     z-index: 1000; /* Đảm bảo menu ở trên cùng */
 }
@@ -319,7 +319,7 @@ color: pink;
     grid-template-columns: repeat(4, 1fr);
     padding: 20px;
 }
-.danhsach {
+.danhsach1 {
     max-width: 1200px;
     margin: 0 auto;
     flex-wrap: wrap;

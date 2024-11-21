@@ -1,4 +1,4 @@
-var hinh = ['./img/baner1.webp', './img/home_slider_item_image_desktop_2.webp'];
+var hinh = ['public/user/img/baner1.webp', 'public/user/img/home_slider_item_image_desktop_2.webp'];
 var index = 0;
 function next(){
     index++;

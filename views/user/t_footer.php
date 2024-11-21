@@ -64,7 +64,6 @@
         </div>
     </div>
 </footer>
-<script src="public/user/js/main.js"></script>
-
+    <script src="public/user/main1.js"></script>
 </body>
 </html>

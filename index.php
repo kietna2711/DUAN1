@@ -5,6 +5,9 @@ if(isset($_GET['ctrl'])){
         case 'page':
             include_once "controllers/ctrl_page.php";
             break;
+        case 'product':
+            include_once "controllers/ctrl_product.php";
+            break;
         default:
             echo "Trang không tồn tại";
             break;

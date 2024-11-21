@@ -3,37 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cosmetiy</title>
-    <link rel="stylesheet" href="public/user/css/styles1.css">
+    <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="public/user/css/reponsize.css">
-    <link rel="stylesheet" href="public/user/css/Notification.css">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/public/user/css/ctsp.css">
-
-    <link rel="icon" href="public/user/img/logo.png">
+    <link rel="stylesheet" href="public/user/css/styles1.css">
+    <link rel="stylesheet" href="public/user/css/ctsp.css">
+    <link rel="stylesheet" href="public/user/css/danhmuc.css">
+    <link rel="stylesheet" href="public/user/css/footer.css">
+    <!-- <link rel="stylesheet" href="public/user/css/lienhe.css"> -->
 </head>
-<style></style>
 <body>
-    <div id="loading-screen">
-        <div class="ellipsis">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
-    
-    
-    <div class="baner">
-        <img id="img" src="public/user/img/home_slider_item_image_desktop_2.webp" alt="" width="100%">
-        <button class="left" onclick="prev()"><i class="fa-solid fa-circle-chevron-left"></i></button>
-        <button class="right" onclick="next()"><i class="fa-solid fa-circle-chevron-right"></i></button>
-    </div>
-
-
     <header>
         <div class="top-section">
-            <a href="#" class="logo"><img src="public/user/img/Beauty_Clinic_with_woman_inside_logo_template-removebg-preview.png" alt="" width="200px" height="150px"></a>
+            <a href="#" class="logo"><img src="public/user/img/logo.png" alt="" width="200px" height="150px"></a>
             <div class="search-container">
                 <input type="text" id="search-bar" placeholder="Bạn cần tìm gì ...?" class="search-bar">
                 <i class="fa fa-search search-icon"></i>

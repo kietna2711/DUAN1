@@ -1,56 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="/public/user/css/danhmuc.css">
-    <link rel="stylesheet" href="/public/user/css/footer.css">
-</head>
-<body>
-    <header>
-        <div class="top-section">
-            <a href="#" class="logo"><img src="img/logo.png" alt="" width="200px" height="150px"></a>
-            <div class="search-container">
-                <input type="text" id="search-bar" placeholder="Bạn cần tìm gì ...?" class="search-bar">
-                <i class="fa fa-search search-icon"></i>
-                <a href="#" class="search-icon"><i class="icon-search"></i></a>
-            </div>
-            <div class="right-icons">
-                <a href="dndk.html"><img src="img/user-removebg-preview.png" alt=""></a>
-                <a href="#"><img src="img/love-removebg-preview.png" alt=""></a>
-                <a href="#"><img src="img/giohang-removebg-preview.png" alt=""></i></a>
-            </div>
-        </div>
-        <nav class="navbar">
-            <ul class="nav-links">
-                <li><a href="index.html">Trang chủ</a></li>
-                <li class="has-submenu">
-                    <a href="danhmuc.html">Nhóm sản phẩm</a>
-                    <ul class="submenu">
-                        <li><a href="#">Chống lão hóa</a></li>
-                        <li><a href="skincare.html">Skincare</a></li>
-                    </ul>
-                </li>
-                <li class="has-submenu">
-                    <a href="#">Sản phẩm hot</a>
-                    <ul class="submenu">
-                        <li><a href="ctsp.html">AGELESS Total Repair Crème</a></li>
-                        <li><a href="#">AGELESS Total Retinol A Crème</a></li>
-                        <li><a href="#">PREVENTION+ Ultra Sheer Spray SPF45+</a></li>
-                        <li><a href="#">Image The MAX Stem Cell Crème</a></li>
-                    </ul>
-                </li>
-                <li><a href="blog.html">Tin tức nổi bật</a></li>
-                <li><a href="introduce.html">Giới thiệu</a></li>
-                <li><a href="lienhe.html">Liên hệ</a></li>
-            </ul>
-            <img src="img/3gach.png" alt="menu" class="menu-sp">
-        </nav>
-    </header>
-
-    <div class="danhsach">
+<div class="danhsach1">
         <div class="filter-sidebar">
             <div class="filter-group">
                 <h3>Thương hiệu sản phẩm</h3>
@@ -97,8 +45,8 @@
         <div class="th1">
             <div class="sanpham">
                 <div class="sanpham1">14%</div>
-                <img src="img/rm1.webp" alt="" class="anh1hover">
-                <img src="img/rm2.webp" alt="" class="anh2hover">
+                <img src="public/user/img/rm1.webp" alt="" class="anh1hover">
+                <img src="public/user/img/rm2.webp" alt="" class="anh2hover">
                 <div class="hover-content">
                     <div class="xn">Xem nhanh</div>
                     <div class="sanpham1">14%</div>
@@ -115,8 +63,8 @@
         
             <div class="sanpham">
                 <div class="sanpham1">14%</div>
-                <img src="img/rm3.webp" alt="" class="anh1hover">
-                <img src="img/rm4.webp" alt="" class="anh2hover">
+                <img src="public/user/img/rm3.webp" alt="" class="anh1hover">
+                <img src="public/user/img/rm4.webp" alt="" class="anh2hover">
                 <div class="hover-content">
                     <div class="xn">Xem nhanh</div>
                     <div class="sanpham1">14%</div>
@@ -133,8 +81,8 @@
         
             <div class="sanpham">
                 <div class="sanpham1">14%</div>
-                <img src="img/rm5.webp" alt="" class="anh1hover">
-                <img src="img/rm6.webp" alt="" class="anh2hover">
+                <img src="public/user/img/rm5.webp" alt="" class="anh1hover">
+                <img src="public/user/img/rm6.webp" alt="" class="anh2hover">
                 <div class="hover-content">
                     <div class="xn">Xem nhanh</div>
                     <div class="sanpham1">14%</div>
@@ -153,8 +101,8 @@
             
             <div class="sanpham">
                 <div class="sanpham1">14%</div>
-                <img src="img/rm7.webp" alt="" class="anh1hover">
-                <img src="img/rm8.webp" alt="" class="anh2hover">
+                <img src="public/user/img/rm7.webp" alt="" class="anh1hover">
+                <img src="public/user/img/rm8.webp" alt="" class="anh2hover">
                 <div class="hover-content">
                     <div class="xn">Xem nhanh</div>
                     <div class="sanpham1">14%</div>
@@ -172,8 +120,8 @@
         
             <div class="sanpham">
                 <div class="sanpham1">14%</div>
-                <img src="img/rm9.webp" alt="" class="anh1hover">
-                <img src="img/rm10.webp" alt="" class="anh2hover">
+                <img src="public/user/img/rm9.webp" alt="" class="anh1hover">
+                <img src="public/user/img/rm10.webp" alt="" class="anh2hover">
                 <div class="hover-content">
                     <div class="xn">Xem nhanh</div>
                     <div class="sanpham1">14%</div>
@@ -191,8 +139,8 @@
         
             <div class="sanpham">
                 <div class="sanpham1">14%</div>
-                <img src="img/rm11.webp" alt="" class="anh1hover">
-                <img src="img/rm12.webp" alt="" class="anh2hover">
+                <img src="public/user/img/rm11.webp" alt="" class="anh1hover">
+                <img src="public/user/img/rm12.webp" alt="" class="anh2hover">
                 <div class="hover-content">
                     <div class="xn">Xem nhanh</div>
                     <div class="sanpham1">14%</div>
@@ -210,13 +158,12 @@
         
             <div class="sanpham">
                 <div class="sanpham1">14%</div>
-                <img src="img/rm13.webp" alt="" class="anh1hover">
-                <img src="img/rm14.webp" alt="" class="anh2hover">
+                <img src="public/user/img/rm13.webp" alt="" class="anh1hover">
+                <img src="public/user/img/rm14.webp" alt="" class="anh2hover">
                 <div class="hover-content">
                     <div class="xn">Xem nhanh</div>
                     <div class="sanpham1">14%</div>
                 </div>
-                <div class="giohang">Thêm vào giỏ</div>
                 <div class="gt">Kem Dưỡng Da Mặt Trẻ Hóa Da Image The MAX Stem Cell Crème</div>
                 <div class="gia">
                     <span class="giamgia">3,705,000₫</span>
@@ -228,8 +175,8 @@
         
             <div class="sanpham">
                 <div class="sanpham1">14%</div>
-                <img src="img/rm15.webp" alt="" class="anh1hover">
-                <img src="img/rm16.webp" alt="" class="anh2hover">
+                <img src="public/user/img/rm15.webp" alt="" class="anh1hover">
+                <img src="public/user/img/rm16.webp" alt="" class="anh2hover">
                 <div class="hover-content">
                     <div class="xn">Xem nhanh</div>
                     <div class="sanpham1">14%</div>
@@ -244,8 +191,8 @@
             </div>
             <div class="sanpham">
                 <div class="sanpham1">14%</div>
-                <img src="img/rm1.webp" alt="" class="anh1hover">
-                <img src="img/rm2.webp" alt="" class="anh2hover">
+                <img src="public/user/img/rm1.webp" alt="" class="anh1hover">
+                <img src="public/user/img/rm2.webp" alt="" class="anh2hover">
                 <div class="hover-content">
                     <div class="xn">Xem nhanh</div>
                     <div class="sanpham1">14%</div>
@@ -261,8 +208,8 @@
 
             <div class="sanpham">
                 <div class="sanpham1">14%</div>
-                <img src="img/rm5.webp" alt="" class="anh1hover">
-                <img src="img/rm6.webp" alt="" class="anh2hover">
+                <img src="public/user/img/rm5.webp" alt="" class="anh1hover">
+                <img src="public/user/img/rm6.webp" alt="" class="anh2hover">
                 <div class="hover-content">
                     <div class="xn">Xem nhanh</div>
                     <div class="sanpham1">14%</div>
@@ -275,79 +222,4 @@
                 </div>
                 <button class="add-to-cart">Thêm vào giỏ hàng</button>
             </div>
-        </div>   
-    </div>   
-        <footer>
-            <div class="footer-container">
-                <div class="footer-logo">
-                    <img src="img/logo.png" alt="">
-                    <p>F1GENZ luôn cam kết, đảm bảo bàn giao sản phẩm đạt chất lượng tối ưu nhất đến tay người dùng.</p>
-                </div>
-                
-                <!-- Contact Section -->
-                <div class="footer-section">
-                    <h3>Liên hệ</h3>
-                    <p>Tư vấn dịch vụ: 1900636099</p>
-                    <p>Hỗ trợ sử dụng: 1900636099</p>
-                    <p>Hỗ trợ vận chuyển: 1900636099</p>
-                    <p>Email: support@sapo.vn</p>
-                    <p>7h00 – 22h00 các ngày từ thứ 2 đến Chủ nhật</p>
-                </div>
-            
-                <!-- About Us Section -->
-                <div class="footer-section">
-                    <h3>Về chúng tôi</h3>
-                    <ul>
-                        <li><a href="#">Giới thiệu</a></li>
-                        <li><a href="#">Chính sách đổi trả</a></li>
-                        <li><a href="#">Chính sách bảo mật</a></li>
-                        <li><a href="#">Điều khoản dịch vụ</a></li>
-                    </ul>
-                </div>
-            
-                <!-- Categories Section -->
-                <div class="footer-section">
-                    <h3>Danh mục</h3>
-                    <ul>
-                        <li><a href="#">Mỹ phẩm</a></li>
-                        <li><a href="#">Chống lão hóa</a></li>
-                        <li><a href="#">Bổ sung Collagen</a></li>
-                        <li><a href="#">Skincare</a></li>
-                        <li><a href="#">Chống nếp nhăn</a></li>
-                    </ul>
-                </div>
-            
-                <!-- Social Media Section -->
-                <div class="footer-social">
-                    <h3>Liên hệ với chúng tôi</h3>
-                    <p>Luôn cập nhật tất cả các hành động mà chúng tôi đã lưu cho tất cả khách hàng của mình.</p>
-                    <div class="social-icons">
-                        <a href="#"><img src="img/fb.webp" alt="Facebook"></a>
-                        <a href="#"><img src="img/ytb.webp" alt="YouTube"></a>
-                        <a href="#"><img src="img/pinterest.webp" alt="Pinterest"></a>
-                        <a href="#"><img src="img/tiktok.webp" alt="TikTok"></a>
-                        <a href="#"><img src="img/instagram.webp" alt="TikTok"></a>
-                    </div>
-                </div>
-            </div>
-        
-            <!-- Footer Bottom -->
-            <div class="footer-bottom">
-                <p>© 2024 - Bản quyền thuộc về F1GENZ TECHNOLOGY CO., LTD. Powered by Haravan</p>
-                <div class="payment-icons">
-                    <img src="img/visa.webp" alt="Visa">
-                    <img src="img/payment.webp" alt="PayPal">
-                    <img src="img/payments.png" alt="Amex">
-                    <img src="img/payment1.webp" alt="Bitcoin">
-                    <img src="img/payment2.webp" alt="Bitcoin">
-                </div>
-            </div>
-        </footer>
-    
-
-
-
-
-
-</body>
-</html>
+        </div>      
