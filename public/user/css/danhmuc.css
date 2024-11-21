@@ -370,8 +370,11 @@ color: pink;
 }
 
 .gt {
-    font-size: 12px;
-    margin-bottom: 10px;
+    width: 200px; /* Chiều rộng của phần chứa */
+    white-space: nowrap; /* Ngăn không cho dòng văn bản bị xuống dòng */
+    overflow: hidden; /* Ẩn phần văn bản tràn ra ngoài */
+    text-overflow: ellipsis; /* Hiển thị dấu ba chấm */
+    font-size: 16px;
     color: #333;
     height: 40px;
     overflow: hidden;

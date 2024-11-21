@@ -2,6 +2,33 @@
 if (isset($_GET['view'])) {
     switch ($_GET['view']) {
         case 'category': 
+            include_once "models/m_database.php";
+            include_once "models/m_product.php";
+            include_once "models/m_category.php";
+            $db = new Category();
+            $category = $db->getALLDM();
+            // Khởi tạo đối tượng Sanpham
+            $products = new Product();
+            // $product=$_GET['categiry_id'];
+            // $productct=$product->getDMById($pcategiry_id);
+
+            // Kiểm tra trang hiện tại
+            if (isset($_GET['trang'])) {
+                $st = $_GET['trang'];  // Trang hiện tại
+            } else {
+                $st = 1;  // Mặc định là trang 1
+            }
+
+            // Kiểm tra nếu có tham số category_id trong URL
+            if (isset($_GET['category_id'])) {
+                $countProduct = $products->getDMById($_GET['category_id']);
+                $dsproduct = $products->getALLidDMALL($_GET['category_id'], $st, 4);
+            } else {
+                $countProduct = $products->getALLSP();
+                $dsproduct = $products->getALLSPtrang($st, 4);
+            }
+
+
             include_once "views/user/t_header1.php";
             include_once "views/user/v_category.php";
             include_once "views/user/t_footer.php";

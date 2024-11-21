@@ -50,152 +50,23 @@
       
 
 <div class="th1">
-    <div class="sanpham">
-        <div class="sanpham1">14%</div>
-        <img src="public/user/img/rm1.webp" alt="" class="anh1hover">
-        <img src="public/user/img/rm2.webp" alt="" class="anh2hover">
-        <div class="hover-content">
-            <div class="xn">Xem nhanh</div>
+    <?php foreach($productHot as $hot){?>
+        <div class="sanpham">
             <div class="sanpham1">14%</div>
+            <img src="public/user/img/<?=$hot['image1']?>" alt="" class="anh1hover">
+            <img src="public/user/img/<?=$hot['image2']?>" alt="" class="anh2hover">
+            <div class="hover-content">
+                <div class="xn">Xem nhanh</div>
+                <div class="sanpham1">14%</div>
+            </div>
+            <div class="gt"><?=$hot['name']?></div>
+            <div class="gia">
+                <span class="giamgia">1,500,000₫</span>
+                <span class="giamseo"><?=$hot['price']?></span>
+            </div>
+            <button class="add-to-cart">Thêm vào giỏ hàng</button>
         </div>
-        <div class="gt">Kem Chống Nắng Toàn Thân Dạng Xịt Image PREVENTION+........</div>
-        <div class="gia">
-            <span class="giamgia">1,500,000₫</span>
-            <span class="giamseo">1,285,000₫</span>
-        </div>
-        <button class="add-to-cart">Thêm vào giỏ hàng</button>
-    </div>
-
-
-    <div class="sanpham">
-        <div class="sanpham1">14%</div>
-        <img src="public/user/img/rm3.webp" alt="" class="anh1hover">
-        <img src="public/user/img/rm4.webp" alt="" class="anh2hover">
-        <div class="hover-content">
-            <div class="xn">Xem nhanh</div>
-            <div class="sanpham1">14%</div>
-        </div>
-       
-        <div class="gt">Kem Dưỡng Body Trẻ Hóa Da Toàn Thân Image BODY SPA Reju......</div>
-        <div class="gia">
-            <span class="giamgia">1,400,000₫</span>
-            <span class="giamseo">1,190,000₫</span>
-        </div>
-        <button class="add-to-cart">Thêm vào giỏ hàng</button>
-    </div>
-
-
-    <div class="sanpham">
-        <div class="sanpham1">14%</div>
-        <img src="public/user/img/rm5.webp" alt="" class="anh1hover">
-        <img src="public/user/img/rm6.webp" alt="" class="anh2hover">
-        <div class="hover-content">
-           <a href="ctsp.html" class="xn"> <div>Xem nhanh</div></a>
-            <div class="sanpham1">14%</div>
-        </div>
-        
-        <div class="gt">Kem Dưỡng Da Mặt Chống Lão Hóa Image AGELESS Total Repair Crème</div>
-        <div class="gia">
-            <span class="giamgia">2,500,000₫</span>
-            <span class="giamseo">2,190,000₫</span>
-        </div>
-        <button class="add-to-cart">Thêm vào giỏ hàng</button>
-    </div>
-
-
-
-    
-    <div class="sanpham">
-        <div class="sanpham1">14%</div>
-        <img src="public/user/img/rm7.webp" alt="" class="anh1hover">
-        <img src="public/user/img/rm8.webp" alt="" class="anh2hover">
-        <div class="hover-content">
-            <div class="xn">Xem nhanh</div>
-            <div class="sanpham1">14%</div>
-        </div>
-        
-        <div class="gt">Kem Dưỡng Da Mặt Phục Hồi Da Image Irescue Post Treatment......</div>
-        <div class="gia">
-            <span class="giamgia">2,100,000₫</span>
-            <span class="giamseo">1,760,000₫</span>
-        </div>
-        <button class="add-to-cart">Thêm vào giỏ hàng</button>
-    </div>
-
-
-
-    <div class="sanpham">
-        <div class="sanpham1">14%</div>
-        <img src="public/user/img/rm9.webp" alt="" class="anh1hover">
-        <img src="public/user/img/rm10.webp" alt="" class="anh2hover">
-        <div class="hover-content">
-            <div class="xn">Xem nhanh</div>
-            <div class="sanpham1">14%</div>
-        </div>
-       
-        <div class="gt">Kem Dưỡng Da Mặt Phục Hồi Và Chống Lão Hóa Image MD......</div>
-        <div class="gia">
-            <span class="giamgia">3,400,000₫</span>
-            <span class="giamseo">2,930,000₫</span>
-        </div>
-        <button class="add-to-cart">Thêm vào giỏ hàng</button>
-    </div>
-
-
-
-    <div class="sanpham">
-        <div class="sanpham1">14%</div>
-        <img src="public/user/img/rm11.webp" alt="" class="anh1hover">
-        <img src="public/user/img/rm12.webp" alt="" class="anh2hover">
-        <div class="hover-content">
-            <div class="xn">Xem nhanh</div>
-            <div class="sanpham1">14%</div>
-        </div>
-        
-        <div class="gt">Kem Dưỡng Da Mặt Trẻ Hóa Da Image AGELESS Total Retinol......</div>
-        <div class="gia">
-            <span class="giamgia">2,500,000₫</span>
-            <span class="giamseo">2,160,000₫</span>
-        </div>
-        <button class="add-to-cart">Thêm vào giỏ hàng</button>
-    </div>
-
-
-
-    <div class="sanpham">
-        <div class="sanpham1">14%</div>
-        <img src="public/user/img/rm13.webp" alt="" class="anh1hover">
-        <img src="public/user/img/rm14.webp" alt="" class="anh2hover">
-        <div class="hover-content">
-            <div class="xn">Xem nhanh</div>
-            <div class="sanpham1">14%</div>
-        </div>
-       
-        <div class="gt">Kem Dưỡng Da Mặt Trẻ Hóa Da Image The MAX Stem Cell Crème</div>
-        <div class="gia">
-            <span class="giamgia">3,705,000₫</span>
-            <span class="giamseo">3,220,000₫</span>
-        </div>
-        <button class="add-to-cart">Thêm vào giỏ hàng</button>
-    </div>
-
-
-    <div class="sanpham">
-        <div class="sanpham1">14%</div>
-        <img src="public/user/img/rm15.webp" alt="" class="anh1hover">
-        <img src="public/user/img/rm16.webp" alt="" class="anh2hover">
-        <div class="hover-content">
-            <div class="xn">Xem nhanh</div>
-            <div class="sanpham1">14%</div>
-        </div>
-        
-        <div class="gt">Serum Trẻ Hóa Da Chống Lão Hóa Image The MAX Stem Cell Serum</div>
-        <div class="gia">
-            <span class="giamgia">3,700,000₫</span>
-            <span class="giamseo">3,185,000₫</span>
-        </div>
-        <button class="add-to-cart">Thêm vào giỏ hàng</button>
-    </div>
+    <?php } ?>
 </div>
 
 

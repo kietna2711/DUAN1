@@ -7,6 +7,11 @@ if (isset($_GET['view'])) {
         case 'home':
             // var_dump($spdaban);
             // //Lấy dữ liệu datab
+            include_once "models/m_database.php";
+            include_once "models/m_product.php";
+            $product =new Product();
+            $productHot=$product->getALLdaban(0,8);
+            // var_dump($productHot);
             include_once "views/user/t_header.php";
             include_once "views/user/v_home.php";
             include_once "views/user/t_footer.php";
@@ -31,6 +36,11 @@ if (isset($_GET['view'])) {
             break;
     }
 }else{
+    include_once "models/m_database.php";
+    include_once "models/m_product.php";
+    $product =new Product();
+    $productHot=$product->getALLdaban(0,8);
+    // var_dump($productHot);
     include_once "views/user/t_header.php";
     include_once "views/user/v_home.php";
     include_once "views/user/t_footer.php";
