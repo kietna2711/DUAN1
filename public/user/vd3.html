@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Sản Phẩm</title>
+</head>
+<style>
+ .sanpham {
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #ddd; /* Optional: for clarity */
+}
+
+.sanpham1 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #e74c3c;
+    color: white;
+    padding: 2px 5px;
+    font-size: 12px;
+    border-radius: 3px;
+    z-index: 3;
+}
+
+.anh1hover {
+    width: 100%;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+}
+
+.anh2hover {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+}
+
+.sanpham:hover .anh1hover {
+    opacity: 0;
+}
+
+.sanpham:hover .anh2hover {
+    opacity: 1;
+}
+
+.gt {
+    font-size: 12px;
+    margin-bottom: 10px;
+    color: #333;
+    height: 40px;
+    overflow: hidden;
+    margin-top: 12px;
+}
+
+.gia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.giamgia {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.giamseo {
+    color: #e74c3c;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.hover-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 4;
+}
+
+.xn {
+    margin: 10px;
+    padding: 5px 10px;
+    color: #333;
+    background-color: white;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 0 0 0 10px;
+    box-shadow: 0 4px 8px rgb(9, 9, 9);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.xn:hover {
+    background-color: pink;
+    color: #fff;
+    box-shadow: 0 6px 20px rgba(120, 112, 112, 0.2);
+    border-bottom-left-radius: 10px;
+}
+
+.love {
+    width: 20px;
+    height: auto;
+    cursor: pointer;
+    top: 60%;
+    position: absolute;
+    opacity: 0;
+    z-index: 2;
+    transition: all 0.3s ease;
+    margin-left: 190px;
+}
+
+.giohang {
+    width: 100%;
+    padding: 5px 0;
+    background-color: #dbd3d3;
+    color: black;
+    text-align: center;
+    font-size: 12px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.sanpham:hover .giohang {
+    opacity: 1; /* Button appears on hover */
+}
+
+.giohang:hover {
+    background-color: #3498db; /* Background color on hover */
+    color: white; /* Text color on hover */
+}
+
+.giohang:active {
+    background-color: #2980b9; /* Darker blue when clicked */
+    transform: scale(0.98); /* Optional: adds a "press" effect */
+}
+
+
+</style>
+<body>
+    <div class="sanpham" data-product-id="1" data-product-name="Kem Chống Nắng Toàn Thân Dạng Xịt Image PREVENTION+ Ultra Sheer" data-product-price="1285000">
+        <!-- Discount Label -->
+        <div class="sanpham1">14%</div>
+    
+        <!-- Product Images (hover effect) -->
+        <img src="img/rm1.webp" alt="" class="anh1hover">
+        <img src="img/rm2.webp" alt="" class="anh2hover">
+    
+        <!-- Hover content (Quick view and other options) -->
+        <div class="hover-content">
+            <div class="xn" onclick="addToCart(event)">Xem nhanh</div>
+        </div>
+    
+        <!-- Product Name -->
+        <div class="gt">Kem Chống Nắng Toàn Thân Dạng Xịt Image PREVENTION+ Ultra Sheer</div>
+    
+        <!-- Product Price -->
+        <div class="gia">
+            <span class="giamgia">1,500,000₫</span>
+            <span class="giamseo">1,285,000₫</span>
+        </div>
+    
+        <!-- Wishlist Icon -->
+        <img class="love" src="img/love-removebg-preview.png" alt="">
+    
+        <!-- Add to Cart Button -->
+        <a class="giohang" href="#" onclick="addToCart(event)">Thêm vào giỏ</a>
+    </div>
+    
+</body>
+</html>

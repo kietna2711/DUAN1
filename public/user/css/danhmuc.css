@@ -319,18 +319,20 @@ color: pink;
     grid-template-columns: repeat(4, 1fr);
     padding: 20px;
 }
-.danhsach{
+.danhsach {
     max-width: 1200px;
-    margin:  0 auto;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 .sanpham {
-    width: 200px;
+    width: 95%;
     padding: 10px;
     text-align: center;
     position: relative;
     overflow: hidden;
 }
-
 .sanpham1 {
     position: absolute;
     top: 10px;
@@ -410,6 +412,9 @@ color: pink;
     transition: opacity 0.3s ease;
     z-index: 4; /* Nội dung hover ở lớp trên cùng */
 }
+.sanpham:hover .hover-content {
+    opacity: 1; /* Khi hover vào sản phẩm, làm cho nội dung hover xuất hiện */
+}
 
 .xn {
     margin: 10px;
@@ -430,62 +435,39 @@ color: pink;
     border-bottom-left-radius: 10px;
 }
 
-.giohang {
-    width: 100%;
-    padding: 5px 0;
-    background-color: #dbd3d3;
-    color: black;
-    text-align: center;
-    font-size: 12px;
-    cursor: pointer;
+/* Hiệu ứng nút "Thêm vào giỏ hàng" */
+.add-to-cart {
     position: absolute;
+    bottom: -50px; /* Ẩn nút dưới sản phẩm */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #ff9f9f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    z-index: 10;
+    opacity: 0; /* Ban đầu ẩn */
+    width: 100%;
+    height: 30px;
     top: 60%;
-    left: 0;
-    opacity: 0;
-    z-index: 2; /* Đặt dưới hình ảnh */
-    transition: all 0.3s ease;
-}
-.giohang1 {
-    width: 100%;
-    padding: 5px 0;
-    background-color: #dbd3d3;
-    color: black;
     text-align: center;
-    font-size: 12px;
-    cursor: pointer;
-    position: absolute;
-    top: 48%;
-    left: 0;
-    opacity: 0;
-    z-index: 2; /* Đặt dưới hình ảnh */
-    transition: all 0.3s ease;
 }
 
-.sanpham:hover .hover-content {
-    opacity: 1;
+/* Hiệu ứng hiện nút khi hover */
+.sanpham:hover .add-to-cart {
+    opacity: 1; /* Hiện nút */
 }
 
-.sanpham:hover .giohang {
-    opacity: 1; /* Hiển thị */
-    transform: translateY(0); /* Nổi lên vị trí chuẩn */
-}
-.giohang:hover{
-    background-color: #3498db;
-    color: white;
-}
-.sanpham:hover .love {
-    opacity: 1; /* Hiển thị */
-    transform: translateY(0); /* Nổi lên vị trí chuẩn */
-}
-
-
-.sanpham:hover .giohang1 {
-    opacity: 1; /* Hiển thị */
-    transform: translateY(0); /* Nổi lên vị trí chuẩn */
-}
-.giohang1:hover{
-    background-color: #3498db;
-    color: white;
+/* Hiệu ứng khi hover vào nút */
+.add-to-cart:hover {
+    background-color:  white;
+    color: #ff9f9f;
+    border: 1px solid  #ff9f9f;
 }
 
 .sp-banchay{

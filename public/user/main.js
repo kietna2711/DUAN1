@@ -1,4 +1,4 @@
-var hinh = ['public/user/img/baner1.webp', 'public/user/img/home_slider_item_image_desktop_2.webp'];
+var hinh = ['./img/baner1.webp', './img/home_slider_item_image_desktop_2.webp'];
 var index = 0;
 function next(){
     index++;
@@ -11,6 +11,8 @@ function prev(){
     document.getElementById('img').src  = hinh[index];
 }
 setInterval("next()",7000);
+
+
 
 
 const searchBar = document.getElementById('search-bar');
@@ -52,6 +54,37 @@ setTimeout(function() {
     loadingScreen.style.display = 'none';
 }, 1000);
 
+
+
+
+
+
+//thông báo
+document.addEventListener('DOMContentLoaded', () => {
+    const notification = document.getElementById('notification');
+    const closeBtn = document.getElementById('close-btn');
+    const bellIcon = document.getElementById('bell-icon');
+  
+    // Hiển thị hoặc ẩn thông báo khi nhấn vào chuông
+    bellIcon.addEventListener('click', () => {
+      if (notification.style.display === 'block') {
+        notification.style.display = 'none'; // Ẩn thông báo nếu đang hiển thị
+      } else {
+        notification.style.display = 'block'; // Hiển thị thông báo nếu đang ẩn
+      }
+  
+      // Kích hoạt hiệu ứng lắc chuông
+      bellIcon.classList.add('shake');
+      setTimeout(() => {
+        bellIcon.classList.remove('shake'); // Xóa hiệu ứng sau khi lắc
+      }, 600); // 600ms khớp với thời gian hiệu ứng lắc
+    });
+  
+    // Ẩn thông báo khi nhấn vào nút đóng
+    closeBtn.addEventListener('click', () => {
+      notification.style.display = 'none';
+    });
+  });
 
 
 

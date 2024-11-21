@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thông Báo</title>
+</head>
+<style>
+
+/* Thông báo */
+.notification {
+  position: fixed;
+  bottom: 70px; /* Đặt thông báo ngay phía trên chuông */
+  right: 20px;
+  width: 280px;
+  background-color: #f8bfc4; /* Tông màu hồng nhạt giống hình */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: none; /* Mặc định ẩn */
+  z-index: 1000;
+  font-size: 14px;
+  overflow: hidden;
+}
+
+/* Mũi nhọn chỉ xuống chuông */
+.notification::after {
+  content: "";
+  position: absolute;
+  bottom: -10px; /* Nằm phía dưới thông báo */
+  right: 20px; /* Căn ngang với chuông */
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #f8bfc4; /* Màu mũi nhọn giống màu nền thông báo */
+}
+
+/* Header của thông báo */
+.notification-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  font-weight: bold;
+  color: #333; /* Màu chữ đậm */
+  background-color: #fddde0; /* Màu nền nhạt hơn cho phần tiêu đề */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Nút đóng thông báo */
+.notification-header .close-btn {
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Nội dung thông báo */
+.notification-content {
+  padding: 12px;
+  color: #444;
+}
+
+.notification-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+
+.notification-content ul li {
+  margin: 5px 0;
+  font-weight: bold; /* Chữ đậm để nổi bật các mục */
+  color: #333; /* Màu chữ đậm hơn một chút */
+}
+
+.notification-content p {
+  font-size: 13px;
+  margin-top: 8px;
+  color: #555;
+}
+
+/* Icon chuông */
+.bell-icon {
+  position: fixed; /* Cố định vị trí */
+  bottom: 20px;    /* Cách cạnh dưới 20px */
+  right: 20px;     /* Cách cạnh phải 20px */
+  font-size: 24px;
+  cursor: pointer;
+  background-color: #f8bfc4; /* Tông màu hồng nhạt */
+  border-radius: 50%;
+  padding: 12px;
+  color: white; /* Màu biểu tượng chuông */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1001; /* Luôn ở trên nội dung trang */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Hiệu ứng hover chuông */
+.bell-icon:hover {
+  background-color: #f5a6ac; /* Màu hồng đậm hơn khi hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Thông báo */
+.notification {
+  position: fixed; /* Cố định vị trí */
+  bottom: 70px; /* Đặt thông báo ngay phía trên chuông */
+  right: 20px;  /* Căn phải cùng với chuông */
+  width: 280px;
+  background-color: #f8bfc4; /* Tông màu hồng nhạt giống chuông */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: none; /* Mặc định ẩn */
+  z-index: 1000; /* Dưới chuông nhưng trên nội dung trang */
+  font-size: 14px;
+  overflow: hidden;
+}
+
+/* Mũi nhọn chỉ xuống chuông */
+.notification::after {
+  content: "";
+  position: absolute;
+  bottom: -10px; /* Nằm phía dưới thông báo */
+  right: 20px; /* Căn ngang với chuông */
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #f8bfc4; /* Màu mũi nhọn giống màu nền thông báo */
+}
+
+/* Animation mở/đóng */
+.notification {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+
+</style>
+<body>
+    <div class="notification" id="notification">
+        <div class="notification-header">
+          <span>Thông báo mới nhất</span>
+          <button class="close-btn" id="close-btn">&times;</button>
+        </div>
+        <div class="notification-content">
+          <ul>
+            <li>> Hot trend</li>
+            <li>> New Arrival</li>
+          </ul>
+          <p>- Cập nhật nhanh chóng các thông tin mới nhất đến với bạn</p>
+        </div>
+      </div>
+      <div class="bell-icon" id="bell-icon">
+        🔔
+      </div>
+      
+  <script >
+document.addEventListener('DOMContentLoaded', () => {
+  const notification = document.getElementById('notification');
+  const closeBtn = document.getElementById('close-btn');
+  const bellIcon = document.getElementById('bell-icon');
+
+  // Hiển thị hoặc ẩn thông báo khi nhấn vào chuông
+  bellIcon.addEventListener('click', () => {
+    if (notification.style.display === 'block') {
+      notification.style.display = 'none'; // Ẩn thông báo nếu đang hiển thị
+    } else {
+      notification.style.display = 'block'; // Hiển thị thông báo nếu đang ẩn
+    }
+
+    // Kích hoạt hiệu ứng lắc chuông
+    bellIcon.classList.add('shake');
+    setTimeout(() => {
+      bellIcon.classList.remove('shake'); // Xóa hiệu ứng sau khi lắc
+    }, 600); // 600ms khớp với thời gian hiệu ứng lắc
+  });
+
+  // Ẩn thông báo khi nhấn vào nút đóng
+  closeBtn.addEventListener('click', () => {
+    notification.style.display = 'none';
+  });
+});
+
+
+  </script>
+</body>
+</html>

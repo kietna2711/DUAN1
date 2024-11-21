@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giỏ hàng</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Nunito', sans-serif;
             background-color: #f9fafb;
             margin: 0;
             padding: 20px;
@@ -17,7 +18,6 @@
             padding: 10px 20px;
             border-radius: 8px;
             margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             font-size: 14px;
         }
 
@@ -43,7 +43,6 @@
             border-collapse: collapse;
             background-color: #fff;
             border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             overflow: hidden;
         }
 
@@ -103,7 +102,6 @@
             cursor: pointer;
             transition: background-color 0.2s, transform 0.1s;
             border-radius: 5px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
         }
 
         .quantity-btn:hover {
@@ -128,7 +126,6 @@
             background-color: #fff;
             margin-top: 15px;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             font-weight: bold;
             color: #333;
         }
@@ -136,6 +133,7 @@
         .checkout-btn {
             display: block;
             width: 100%;
+            float: right;
             max-width: 200px;
             padding: 15px;
             background-color: #ff5757;
@@ -148,7 +146,7 @@
             font-weight: bold;
             margin: 20px auto 0;
             transition: background-color 0.3s, transform 0.2s;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            text-decoration: none;
         }
 
         .checkout-btn:hover {
@@ -164,9 +162,6 @@
     </style>
 </head>
 <body>
-    <div class="breadcrumb">
-        <a href="#">Trang chủ</a> > <span>Giỏ hàng</span>
-    </div>
     <h1>Giỏ hàng</h1>
     <table class="cart-table">
         <thead>
@@ -180,7 +175,7 @@
         <tbody id="cart-items">
             <tr>
                 <td class="product-info">
-                    <img src="img/product.jpg" alt="Product Image" class="product-image">
+                    <img src="img/rm10.webp" alt="Product Image" class="product-image">
                     <span class="product-name">Sữa rửa mặt Senka</span>
                 </td>
                 <td class="product-price">80,000₫</td>
@@ -198,7 +193,7 @@
     <div class="cart-total">
         <span>Tổng tiền: </span><span id="total-price">80,000₫</span>
     </div>
-    <button class="checkout-btn">Thanh toán</button>
+   <a href="thanhtoan.html"> <button class="checkout-btn">Thanh toán</button></a>
 
     <script>
         const pricePerUnit = 80000; // Giá của sản phẩm

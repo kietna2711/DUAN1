@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Layout</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="footer.css">
 </head>
 <style>
@@ -290,7 +290,7 @@ header.hidden{
     margin: 10px 0;
     font-size: 10px;
     color: #777;
-    gap: 4px;
+    gap: 14px;
 }
 
 .info .date, .info .category, .info .comments {
@@ -299,7 +299,7 @@ header.hidden{
 }
 
 .card p {
-    font-size: 9px;
+    font-size: 12px;
     color: #555;
     flex-grow: 1;
 }
@@ -315,8 +315,8 @@ header.hidden{
     cursor: pointer;
     transition: background-color 0.3s;
     align-self: center;
-    margin-top: 80px;
-    
+    margin-top: 15px;
+    text-decoration: none;
 }
 
 .bt:hover {
@@ -417,10 +417,10 @@ header.hidden{
             <ul class="nav-links">
                 <li><a href="index.html">Trang chủ</a></li>
                 <li class="has-submenu">
-                    <a href="#">Nhóm sản phẩm</a>
+                    <a href="danhmuc.html">Nhóm sản phẩm</a>
                     <ul class="submenu">
                         <li><a href="danhmuc.html">Chống lão hóa</a></li>
-                        <li><a href="#">Skincare</a></li>
+                        <li><a href="skincare.html">Skincare</a></li>
                     </ul>
                 </li>
                 <li class="has-submenu">
@@ -433,7 +433,7 @@ header.hidden{
                     </ul>
                 </li>
                 <li><a href="#">Tin tức nổi bật</a></li>
-                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="introduce.html">Giới thiệu</a></li>
                 <li><a href="lienhe.html">Liên hệ</a></li>
             </ul>
             <img src="img/3gach.png" alt="menu" class="menu-sp">
@@ -451,7 +451,7 @@ header.hidden{
             <span class="comments">3 Comments</span>
         </div>
         <p>“Dưỡng ẩm cho da” là cụm từ rất phổ biến. Nếu bạn gõ cụm từ “làm thế nào để dưỡng ẩm” cho ra đến 56 triệu kết quả...</p>
-        <button class="bt">Xem thêm</button>
+        <a href="article.html" class="bt">Xem thêm</a>
     </div>
     <div class="card">
         <img src="img/gt2.webp" alt="Product 2">
@@ -462,7 +462,7 @@ header.hidden{
             <span class="comments">3 Comments</span>
         </div>
         <p>Bài viết gốc trên Plant Therapy. Vitabox biên dịch. Các phương pháp sản xuất tinh dầu...</p>
-        <button class="bt">Xem thêm</button>
+        <a href="article2.html" class="bt">Xem thêm</a>
     </div>
     <div class="card">
         <img src="img/gt3.webp" alt="Product 3">
@@ -473,7 +473,7 @@ header.hidden{
             <span class="comments">3 Comments</span>
         </div>
         <p>Thay vì phải đi spa với chi phí đắt đỏ hoặc mua các loại mỹ phẩm làm đẹp có giá trên trời...</p>
-        <button class="bt">Xem thêm</button>
+        <a href="article3.html" class="bt">Xem thêm</a>
     </div>
 </div>
         

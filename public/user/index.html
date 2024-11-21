@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cosmetiy</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="reponsize.css">
+    <link rel="stylesheet" href="./css/reponsize.css">
+    <link rel="stylesheet" href="./css/Notification.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
     <link rel="icon" href="img/logo.png">
 </head>
 <style></style>
@@ -60,8 +63,8 @@
                         <li><a href="#">Image The MAX Stem Cell Crème</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Tin tức nổi bật</a></li>
-                <li><a href="blog.html">Giới thiệu</a></li>
+                <li><a href="blog.html">Tin tức nổi bật</a></li>
+                <li><a href="introduce.html">Giới thiệu</a></li>
                 <li><a href="lienhe.html">Liên hệ</a></li>
             </ul>
             <img src="img/3gach.png" alt="menu" class="menu-sp">
@@ -102,6 +105,25 @@
         </div>
     </div>
 
+
+    <div class="notification" id="notification">
+        <div class="notification-header">
+          <span>Thông báo mới nhất</span>
+          <button class="close-btn" id="close-btn">&times;</button>
+        </div>
+        <div class="notification-content">
+          <ul>
+            <li>> Hot trend</li>
+            <li>> New Arrival</li>
+          </ul>
+          <p>- Cập nhật nhanh chóng các thông tin mới nhất đến với bạn</p>
+        </div>
+      </div>
+      <div class="bell-icon" id="bell-icon">
+        🔔
+      </div>
+      
+
 <div class="th1">
     <div class="sanpham">
         <div class="sanpham1">14%</div>
@@ -111,13 +133,12 @@
             <div class="xn">Xem nhanh</div>
             <div class="sanpham1">14%</div>
         </div>
-        <a class="giohang" href="">Thêm vào giỏ</a>
-        <img class="love" src="img/love-removebg-preview.png" alt="">
-        <div class="gt">Kem Chống Nắng Toàn Thân Dạng Xịt Image PREVENTION+ Ultra Sheer</div>
+        <div class="gt">Kem Chống Nắng Toàn Thân Dạng Xịt Image PREVENTION+........</div>
         <div class="gia">
             <span class="giamgia">1,500,000₫</span>
             <span class="giamseo">1,285,000₫</span>
         </div>
+        <button class="add-to-cart">Thêm vào giỏ hàng</button>
     </div>
 
 
@@ -129,12 +150,13 @@
             <div class="xn">Xem nhanh</div>
             <div class="sanpham1">14%</div>
         </div>
-        <div class="giohang">Thêm vào giỏ</div>
-        <div class="gt">Kem Dưỡng Body Trẻ Hóa Da Toàn Thân Image BODY SPA Rejuvenating Body Lotion</div>
+       
+        <div class="gt">Kem Dưỡng Body Trẻ Hóa Da Toàn Thân Image BODY SPA Reju......</div>
         <div class="gia">
             <span class="giamgia">1,400,000₫</span>
             <span class="giamseo">1,190,000₫</span>
         </div>
+        <button class="add-to-cart">Thêm vào giỏ hàng</button>
     </div>
 
 
@@ -143,15 +165,16 @@
         <img src="img/rm5.webp" alt="" class="anh1hover">
         <img src="img/rm6.webp" alt="" class="anh2hover">
         <div class="hover-content">
-            <div class="xn">Xem nhanh</div>
+           <a href="ctsp.html" class="xn"> <div>Xem nhanh</div></a>
             <div class="sanpham1">14%</div>
         </div>
-        <div class="giohang">Thêm vào giỏ</div>
+        
         <div class="gt">Kem Dưỡng Da Mặt Chống Lão Hóa Image AGELESS Total Repair Crème</div>
         <div class="gia">
             <span class="giamgia">2,500,000₫</span>
             <span class="giamseo">2,190,000₫</span>
         </div>
+        <button class="add-to-cart">Thêm vào giỏ hàng</button>
     </div>
 
 
@@ -165,12 +188,13 @@
             <div class="xn">Xem nhanh</div>
             <div class="sanpham1">14%</div>
         </div>
-        <div class="giohang">Thêm vào giỏ</div>
-        <div class="gt">Kem Dưỡng Da Mặt Phục Hồi Da Image Irescue Post Treatment Recovery Balm</div>
+        
+        <div class="gt">Kem Dưỡng Da Mặt Phục Hồi Da Image Irescue Post Treatment......</div>
         <div class="gia">
             <span class="giamgia">2,100,000₫</span>
             <span class="giamseo">1,760,000₫</span>
         </div>
+        <button class="add-to-cart">Thêm vào giỏ hàng</button>
     </div>
 
 
@@ -183,12 +207,13 @@
             <div class="xn">Xem nhanh</div>
             <div class="sanpham1">14%</div>
         </div>
-        <div class="giohang">Thêm vào giỏ</div>
-        <div class="gt">Kem Dưỡng Da Mặt Phục Hồi Và Chống Lão Hóa Image MD Restoring Youth Repair Crème</div>
+       
+        <div class="gt">Kem Dưỡng Da Mặt Phục Hồi Và Chống Lão Hóa Image MD......</div>
         <div class="gia">
             <span class="giamgia">3,400,000₫</span>
             <span class="giamseo">2,930,000₫</span>
         </div>
+        <button class="add-to-cart">Thêm vào giỏ hàng</button>
     </div>
 
 
@@ -201,12 +226,13 @@
             <div class="xn">Xem nhanh</div>
             <div class="sanpham1">14%</div>
         </div>
-        <div class="giohang">Thêm vào giỏ</div>
-        <div class="gt">Kem Dưỡng Da Mặt Trẻ Hóa Da Image AGELESS Total Retinol A Crème</div>
+        
+        <div class="gt">Kem Dưỡng Da Mặt Trẻ Hóa Da Image AGELESS Total Retinol......</div>
         <div class="gia">
             <span class="giamgia">2,500,000₫</span>
             <span class="giamseo">2,160,000₫</span>
         </div>
+        <button class="add-to-cart">Thêm vào giỏ hàng</button>
     </div>
 
 
@@ -219,12 +245,13 @@
             <div class="xn">Xem nhanh</div>
             <div class="sanpham1">14%</div>
         </div>
-        <div class="giohang">Thêm vào giỏ</div>
+       
         <div class="gt">Kem Dưỡng Da Mặt Trẻ Hóa Da Image The MAX Stem Cell Crème</div>
         <div class="gia">
             <span class="giamgia">3,705,000₫</span>
             <span class="giamseo">3,220,000₫</span>
         </div>
+        <button class="add-to-cart">Thêm vào giỏ hàng</button>
     </div>
 
 
@@ -236,12 +263,13 @@
             <div class="xn">Xem nhanh</div>
             <div class="sanpham1">14%</div>
         </div>
-        <div class="giohang">Thêm vào giỏ</div>
+        
         <div class="gt">Serum Trẻ Hóa Da Chống Lão Hóa Image The MAX Stem Cell Serum</div>
         <div class="gia">
             <span class="giamgia">3,700,000₫</span>
             <span class="giamseo">3,185,000₫</span>
         </div>
+        <button class="add-to-cart">Thêm vào giỏ hàng</button>
     </div>
 </div>
 
@@ -311,12 +339,13 @@
             <div class="xn">Xem nhanh</div>
         </div>
         <div class="sanpham1">14%</div>
-        <div class="giohang1">Thêm vào giỏ</div>
-        <div class="gt">Kem Dưỡng Body Trẻ Hóa Da Toàn Thân Image BODY SPA Rejuvenating Body Lotion</div>
+        
+        <div class="gt">Kem Dưỡng Body Trẻ Hóa Da Toàn Thân Image BODY SPA......</div>
         <div class="gia">
             <span class="giamgia">1,400,000₫</span>
             <span class="giamseo">1,190,000₫</span>
         </div>
+        <button class="add-to-cart1">Thêm vào giỏ hàng</button>
     </div>
     <div class="sanpham">
         <div class="sanpham1">14%</div>
@@ -326,12 +355,13 @@
             <div class="xn">Xem nhanh</div>
             <div class="sanpham1">14%</div>
         </div>
-        <div class="giohang1">Thêm vào giỏ</div>
+        
         <div class="gt">Kem Dưỡng Da Mặt Chống Lão Hóa Image AGELESS Total Repair Crème</div>
         <div class="gia">
             <span class="giamgia">2,500,000₫</span>
             <span class="giamseo">2,190,000₫</span>
         </div>
+        <button class="add-to-cart1">Thêm vào giỏ hàng</button>
     </div>
 
 
@@ -345,12 +375,13 @@
             <div class="xn">Xem nhanh</div>
             <div class="sanpham1">14%</div>
         </div>
-        <div class="giohang1">Thêm vào giỏ</div>
-        <div class="gt">Kem Dưỡng Da Mặt Phục Hồi Da Image Irescue Post Treatment Recovery Balm</div>
+        
+        <div class="gt">Kem Dưỡng Da Mặt Phục Hồi Da Image Irescue Post Treatment</div>
         <div class="gia">
             <span class="giamgia">2,100,000₫</span>
             <span class="giamseo">1,760,000₫</span>
         </div>
+        <button class="add-to-cart1">Thêm vào giỏ hàng</button>
     </div>
 
 
@@ -363,12 +394,13 @@
             <div class="xn">Xem nhanh</div>
             <div class="sanpham1">14%</div>
         </div>
-        <div class="giohang1">Thêm vào giỏ</div>
-        <div class="gt">Kem Dưỡng Da Mặt Phục Hồi Và Chống Lão Hóa Image MD Restoring Youth Repair Crème</div>
+        
+        <div class="gt">Kem Dưỡng Da Mặt Phục Hồi Và Chống Lão Hóa Image MD Restoring </div>
         <div class="gia">
             <span class="giamgia">3,400,000₫</span>
             <span class="giamseo">2,930,000₫</span>
         </div>
+        <button class="add-to-cart1">Thêm vào giỏ hàng</button>
     </div>
 </div>
 </div>
@@ -395,7 +427,7 @@
             <span class="comments">3 Comments</span>
         </div>
         <p>“Dưỡng ẩm cho da” là cụm từ rất phổ biến. Nếu bạn gõ cụm từ “làm thế nào để dưỡng ẩm” cho ra đến 56 triệu kết quả...</p>
-        <a class="bt">Xem thêm</a>
+        <a href="article.html" class="bt">Xem thêm</a>
     </div>
     <div class="card">
         <img src="img/gt2.webp" alt="Product 2">
@@ -406,7 +438,7 @@
             <span class="comments">3 Comments</span>
         </div>
         <p>Bài viết gốc trên Plant Therapy. Vitabox biên dịch. Các phương pháp sản xuất tinh dầu...</p>
-        <a class="bt">Xem thêm</a>
+        <a href="article2.html" class="bt">Xem thêm</a>
     </div>
     <div class="card">
         <img src="img/gt3.webp" alt="Product 3">
@@ -417,7 +449,7 @@
             <span class="comments">3 Comments</span>
         </div>
         <p>Thay vì phải đi spa với chi phí đắt đỏ hoặc mua các loại mỹ phẩm làm đẹp có giá trên trời...</p>
-        <a class="bt">Xem thêm</a>
+        <a href="article3.html" class="bt">Xem thêm</a>
     </div>
 </div>
 
