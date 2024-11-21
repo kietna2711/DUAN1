@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 // Điều hướng tới các controllers
 if(isset($_GET['ctrl'])){
     switch ($_GET['ctrl']) {
