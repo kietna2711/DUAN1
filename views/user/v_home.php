@@ -50,7 +50,10 @@
       
 
 <div class="th1">
-    <?php foreach($productHot as $hot){?>
+    <?php foreach($productHot as $hot){
+        $link="?ctrl=product&view=productdetail&product_id=".$hot['product_id'];
+        ?>
+        <a href="<?=$link?>">
         <div class="sanpham">
             <div class="sanpham1">14%</div>
             <img src="public/user/img/<?=$hot['image1']?>" alt="" class="anh1hover">
@@ -66,6 +69,7 @@
             </div>
             <button class="add-to-cart">Thêm vào giỏ hàng</button>
         </div>
+        </a>
     <?php } ?>
 </div>
 
@@ -133,7 +137,10 @@
     <?php
     $limitedproductDM = array_slice($productDM, 0, 6);
     ?>
-    <?php foreach($limitedproductDM as $product){?>
+    <?php foreach($limitedproductDM as $product){
+                $link="?ctrl=product&view=productdetail&product_id=".$product['product_id'];
+                ?>
+        <a href="<?=$link?>">
         <div class="sanpham">
             <div class="sanpham1">14%</div>
             <img src="public/user/img/<?=$product['image1']?>" alt="" class="anh1hover">
@@ -149,6 +156,7 @@
             </div>
             <button class="add-to-cart">Thêm vào giỏ hàng</button>
         </div>
+        </a>
     <?php } ?>
 </div>
 </div>

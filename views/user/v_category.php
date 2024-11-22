@@ -43,7 +43,10 @@
             <p>Max Mara, PUMA, Ted Baker, DSQUARED, Topman... mang đến sự thoải mái, năng động nhưng cũng không kém phần trẻ trung, sang trọng. Quần thể thao, quần jeans, quần kaki hay quần short là những "must-have-items" trong tủ đồ của các quý ông sành điệu.</p>
         </div> -->
         <div class="th1">
-            <?php foreach($dsproduct as $product){?>
+            <?php foreach($dsproduct as $product){
+                        $link="?ctrl=product&view=productdetail&product_id=".$product['product_id'];
+                ?>
+                <a href="<?=$link?>">
                 <div class="sanpham">
                     <div class="sanpham1">14%</div>
                     <img src="public/user/img/<?=$product['image1']?>" alt="" class="anh1hover">
@@ -59,6 +62,7 @@
                     </div>
                     <button class="add-to-cart">Thêm vào giỏ hàng</button>
                 </div>
+                </a>
             <?php } ?>
         </div>      
         <div class="pagination">

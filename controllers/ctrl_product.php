@@ -34,6 +34,15 @@ if (isset($_GET['view'])) {
             include_once "views/user/t_footer.php";
             break;  
         case 'productdetail':
+            include_once "models/m_database.php";
+            include_once "models/m_product.php";
+            include_once "models/m_category.php";
+            $product = new Product();
+            $id = $_GET["product_id"];
+            $productDetail = $product->getById($id);
+            $category_id = $productDetail[0]['category_id'];
+            $productGY= $product ->getDMById($category_id);
+            // var_dump($productGY);
             include_once "views/user/t_header1.php";
             include_once "views/user/v_productDetail.php";
             include_once "views/user/t_footer.php";

@@ -4,20 +4,18 @@
                     <img src="public/user/img/sale.gif" alt="Sale Icon"> <span id="flashSaleTimer">Loading...</span>
                     <a href="danhmuc.html">Xem toàn bộ sản phẩm flash-sale</a>
                 </div>
-
-                <div class="sanphamchinh">
+    <?php foreach ($productDetail as $detail) { ?>
+        <div class="sanphamchinh">
                     <div class="sanpham2">
-                        <img id="anhtong" src="public/user/img/ctsp.webp" alt="Main Product Image">
+                        <img id="anhtong" src="public/user/img/<?=$detail['image1']?>" alt="Main Product Image">
                         <div class="sanphamphu">
-                            <img src="public/user/img/ctsp.webp" alt="Thumbnail 1" onclick="changeImage('public/user/img/ctsp.webp')"
+                            <img src="public/user/img/<?=$detail['image1']?>" alt="Thumbnail 1" onclick="changeImage('public/user/img/<?=$detail['image1']?>')"
                                 class="active">
-                            <img src="public/user/img/ctsp1.webp" alt="Thumbnail 2" onclick="changeImage('public/user/img/ctsp1.webp')">
-                            <img src="public/user/img/ctsp2.webp" alt="Thumbnail 3" onclick="changeImage('public/user/img/ctsp2.webp')">
-                            <img src="public/user/img/ctsp3.webp" alt="Thumbnail 4" onclick="changeImage('public/user/img/ctsp3.webp')">
+                            <img src="public/user/img/<?=$detail['image2']?>" alt="Thumbnail 2" onclick="changeImage('public/user/img/<?=$detail['image2']?>')">
                         </div>
                     </div>
                     <div class="gioithieu">
-                        <h1 class="gioithieu1">Kem Dưỡng Da Mặt Trẻ Hóa Da Image The MAX Stem Cell Crème</h1>
+                        <h1 class="gioithieu1"><?=$detail['name']?></h1>
                         <div class="thuonghieu">
                             <div class="th">
                                 <ul>
@@ -33,11 +31,10 @@
                             </div>
                         </div>
                         <p class="giagoc">3,705,000 </p>
-                        <span class="price-sale"> 3,220,000</span>
+                        <span class="price-sale"><?=$detail['price']?></span>
                         <p class="tk"> Tiết kiệm 14%</p>
                         <div class="size">
-                            <P>Quy Cách</P><button>48g</button>
-                            <button>142g</button>
+                            <P>Mô tả:<?=$detail['description']?></P>
                         </div>
                         <div class="quantity-wrapper">
                             <p>Số Lượng</p>
@@ -69,92 +66,34 @@
                         </div>
                     </div>
                 </div>
-
+    <?php } ?>
                 <div class="product-section">
                     <h2>Sản phẩm liên quan</h2>
                     <div class="product-list">
-                        <div class="sanpham">
-                            <div class="sanpham1">15%</div>
-                            <img src="public/user/img/rm1.webp" alt="Sản phẩm 1" class="anh1hover">
-                            <img src="public/user/img/rm2.webp" alt="Sản phẩm 1 Hover" class="anh2hover">
-                            <div class="hover-content">
-                                <div class="xn">Xem nhanh</div>
-                                <div class="sanpham1">15%</div>
-                            </div>
-                            <div class="giohang">Thêm vào giỏ</div>
-                            <div class="gt">Serum Trẻ Hoá Da Chống Lão Hoá Image MD Restoring...</div>
-                            <div class="gia">
-                                <span class="giamgia">3,000,000₫</span>
-                                <span class="giamseo">3,321,000₫</span>
-                            </div>
-                        </div>
-                        <div class="sanpham">
-                            <div class="sanpham1">14%</div>
-                            <img src="public/user/img/rm3.webp" alt="" class="anh1hover">
-                            <img src="public/user/img/rm4.webp" alt="" class="anh2hover">
-                            <div class="hover-content">
-                                <div class="xn">Xem nhanh</div>
+                    <?php
+                    $limitedproductGY = array_slice($productGY, 0,5);
+                    ?>
+                        <?php foreach ($limitedproductGY as $GY) {
+                            $link="?ctrl=product&view=productdetail&product_id=".$GY['product_id'];
+                            ?>
+                            <a href="<?=$link?>">
+                            <div class="sanpham">
                                 <div class="sanpham1">14%</div>
+                                <img src="public/user/img/<?=$GY['image1']?>" alt="" class="anh1hover">
+                                <img src="public/user/img/<?=$GY['image2']?>" alt="" class="anh2hover">
+                                <div class="hover-content">
+                                    <div class="xn">Xem nhanh</div>
+                                    <div class="sanpham1">14%</div>
+                                </div>
+                                <div class="gt"><?=$GY['name']?></div>
+                                <div class="gia">
+                                    <span class="giamgia">1,500,000₫</span>
+                                    <span class="giamseo"><?=$GY['price']?></span>
+                                </div>
+                                <button class="add-to-cart">Thêm vào giỏ hàng</button>
                             </div>
-                            <div class="giohang">Thêm vào giỏ</div>
-                            <div class="gt">Kem Dưỡng Body Trẻ Hóa Da Toàn Thân Image BODY SPA Rejuvenating Body Lotion
-                            </div>
-                            <div class="gia">
-                                <span class="giamgia">1,400,000₫</span>
-                                <span class="giamseo">1,190,000₫</span>
-                            </div>
-                        </div>
-                        <div class="sanpham">
-                            <div class="sanpham1">14%</div>
-                            <img src="public/user/img/rm5.webp" alt="" class="anh1hover">
-                            <img src="public/user/img/rm6.webp" alt="" class="anh2hover">
-                            <div class="hover-content">
-                                <div class="xn">Xem nhanh</div>
-                                <div class="sanpham1">14%</div>
-                            </div>
-                            <div class="giohang">Thêm vào giỏ</div>
-                            <div class="gt">Kem Dưỡng Da Mặt Chống Lão Hóa Image AGELESS Total Repair Crème</div>
-                            <div class="gia">
-                                <span class="giamgia">2,500,000₫</span>
-                                <span class="giamseo">2,190,000₫</span>
-                            </div>
-                        </div>
-
-
-                        <div class="sanpham">
-                            <div class="sanpham1">14%</div>
-                            <img src="public/user/img/rm7.webp" alt="" class="anh1hover">
-                            <img src="public/user/img/rm8.webp" alt="" class="anh2hover">
-                            <div class="hover-content">
-                                <div class="xn">Xem nhanh</div>
-                                <div class="sanpham1">14%</div>
-                            </div>
-                            <div class="giohang">Thêm vào giỏ</div>
-                            <div class="gt">Kem Dưỡng Da Mặt Phục Hồi Da Image Irescue Post Treatment Recovery Balm
-                            </div>
-                            <div class="gia">
-                                <span class="giamgia">2,100,000₫</span>
-                                <span class="giamseo">1,760,000₫</span>
-                            </div>
-                        </div>
-
-                        <div class="sanpham">
-                            <div class="sanpham1">14%</div>
-                            <img src="public/user/img/rm9.webp" alt="" class="anh1hover">
-                            <img src="public/user/img/rm10.webp" alt="" class="anh2hover">
-                            <div class="hover-content">
-                                <div class="xn">Xem nhanh</div>
-                                <div class="sanpham1">14%</div>
-                            </div>
-                            <div class="giohang">Thêm vào giỏ</div>
-                            <div class="gt">Kem Dưỡng Da Mặt Phục Hồi Và Chống Lão Hóa Image MD Restoring Youth Repair
-                                Crème</div>
-                            <div class="gia">
-                                <span class="giamgia">3,400,000₫</span>
-                                <span class="giamseo">2,930,000₫</span>
-                            </div>
-                        </div>
-
+                            </a>
+                        <?php } ?>
                     </div>
                     <div class="itemtong">
                     <a href=""><div class="item1"><span>Mô tả sản phẩm</span></div></a>
@@ -163,12 +102,12 @@
                     <a href=""><div class="item">Điều khoản dịch vụ</div></a>
                     </div>
 
-                    </div>
+                </div>
                     <div class="description-container">
                         <p>Nội dung đang được cập nhật</p>
                     </div>
                     <h2>Sản phẩm đã xem</h2>
-                    <div class="product-list">
+                    <!-- <div class="product-list">
                         <div class="sanpham">
                             <div class="sanpham1">14%</div>
                             <img src="public/user/img/rm11.webp" alt="" class="anh1hover">
@@ -253,7 +192,7 @@
                             </div>
                         </div>
 
-                    </div>
+                    </div> -->
                 </div>
 
 
