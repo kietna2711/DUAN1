@@ -9,6 +9,9 @@ if (isset($_GET['view'])) {
             // //Lấy dữ liệu datab
             include_once "models/m_database.php";
             include_once "models/m_product.php";
+            include_once "models/m_blog.php";
+            $blog = new Blog();
+            $blogSP = $blog->getOneIdBlog(1);
             $product =new Product();
             $productHot=$product->getALLdaban(0,8);
             // var_dump($productHot);
@@ -38,8 +41,17 @@ if (isset($_GET['view'])) {
 }else{
     include_once "models/m_database.php";
     include_once "models/m_product.php";
+    include_once "models/m_blog.php";
+    $blog = new Blog();
+    $blogALL = $blog ->getALLBlog();
+    // var_dump($blogALL);
+    $blogSP = $blog->getOneIdBlog(1);
+    // var_dump($blogSP);
     $product =new Product();
     $productHot=$product->getALLdaban(0,8);
+    $productDM = $product ->getDMById(2);
+
+    // var_dump($productDM);
     // var_dump($productHot);
     include_once "views/user/t_header.php";
     include_once "views/user/v_home.php";

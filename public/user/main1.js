@@ -49,10 +49,10 @@ typePhrase();
 
 
 // Hiển thị loading screen trong 1 giây (3000 ms)
-setTimeout(function() {
-    var loadingScreen = document.getElementById('loading-screen');
-    loadingScreen.style.display = 'none';
-}, 1000);
+// setTimeout(function() {
+//     var loadingScreen = document.getElementById('loading-screen');
+//     loadingScreen.style.display = 'none';
+// }, 1000);
 
 
 

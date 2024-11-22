@@ -668,12 +668,17 @@ header.hidden{
     }
 
     .spgy .gtng h2 {
+        width: 661px;
         font-size: 24px;
         margin-bottom: 10px;
         color: #333;
     }
 
     .spgy .gtng p {
+        white-space: nowrap; /* Ngăn không cho dòng văn bản bị xuống dòng */
+        overflow: hidden; /* Ẩn phần văn bản tràn ra ngoài */
+        text-overflow: ellipsis; /* Hiển thị dấu ba chấm */
+        width: 661px;
         font-size: 14px;
         color: #666;
     }
@@ -754,6 +759,10 @@ transition: transform 0.9s ease;
 }
 
 .card p {
+    width: 360px;
+    white-space: nowrap; /* Ngăn không cho dòng văn bản bị xuống dòng */
+    overflow: hidden; /* Ẩn phần văn bản tràn ra ngoài */
+    text-overflow: ellipsis; /* Hiển thị dấu ba chấm */
     font-size: 12px;
     color: #555;
     flex-grow: 1;

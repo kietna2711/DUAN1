@@ -11,17 +11,17 @@ class Product extends database {
         return $this->db->getAll($sql);
     }
 
-    public function getDMById($categiry_id) {
-        $sql = "SELECT * FROM product WHERE categiry_id = " .$categiry_id;
-        return $this->db->getAll($sql, [$categiry_id]);
+    public function getDMById($category_id) {
+        $sql = "SELECT * FROM product WHERE category_id = " .$category_id;
+        return $this->db->getAll($sql, [$category_id]);
     }
     public function getById($product_id) {
         $sql = "SELECT * FROM product WHERE product_id = " .$product_id;
         return $this->db->getAll($sql);
     }
-    public function insertSP($name, $price, $description, $img1, $img2, $quantity, $sold, $categiry_id) {
+    public function insertSP($name, $price, $description, $img1, $img2, $quantity, $sold, $category_id) {
         $sql =  'INSERT INTO product (name, price, description, image1, image2, quantity, sold, category_id) 
-                 VALUES ("' . $name . '", ' . $price . ', "' . $description . '", "' . $img1 . '", "' . $img2 . '", ' . $quantity . ', ' . $sold . ', ' . $categiry_id. ')';
+                 VALUES ("' . $name . '", ' . $price . ', "' . $description . '", "' . $img1 . '", "' . $img2 . '", ' . $quantity . ', ' . $sold . ', ' . $category_id. ')';
         return $this->db->insert($sql);
     }
     
@@ -64,10 +64,10 @@ class Product extends database {
         return $this->db->getALL($sql);
     }
 
-    public function getALLidDMALL($categiry_id, $trang, $soluongsp) {
+    public function getALLidDMALL($category_id, $trang, $soluongsp) {
         $sql = "SELECT * FROM product WHERE 1";
-        if ($categiry_id > 0) {
-            $sql .= " AND categiry_id=" . $categiry_id;
+        if ($category_id > 0) {
+            $sql .= " AND category_id=" . $category_id;
         }
         $limit1 = ($trang - 1) * $soluongsp;
         $limit2 = $soluongsp;
@@ -75,10 +75,10 @@ class Product extends database {
         return $this->db->getALL($sql);
     }
     
-    public function getALLSPLQ($categiry_id,$id){
+    public function getALLSPLQ($category_id,$id){
         $sql = "SELECT * FROM product WHERE id!= " .$id;
-        if ($categiry_id > 0){
-            $sql .= "AND categiry_id=".$categiry_id;
+        if ($category_id > 0){
+            $sql .= "AND category_id=".$category_id;
         }
         return $this->db->getall($sql);
     }

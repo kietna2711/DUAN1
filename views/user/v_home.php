@@ -115,89 +115,41 @@
 
 
 
-
+<div class="sp-banchay">
+        <h1 class="header">Sữa tắm</h1>
+</div>
 <div class="whenin">
-    <!-- Cột bên trái -->
     <div class="spgy">
-        <img src="public/user/img/bc1.webp" alt="Main Product">
+    <?php if (!empty($blogSP)) { ?>
+        <img src="public/user/img/<?=$blogSP['image']?>" alt="Main Product">
         <div class="gtng">
-            <h2>WHEN IN BEN TRE</h2>
-            <p>NEW COLLECTION | WHEN IN BEN TRE</p>
-            <p>Với hành trình khám phá không ngừng và niềm tự hào to lớn về Việt Nam, các NTK FORMAT đã tiếp tục <br> đặt chân đến mảnh đất Bến Tre bình dị và thân thương. BST WHEN IN BEN TRE tinh tế khai thác <br> hình ảnh rặng dừa cùng sống nước đặc trưng theo phong cách nghệ thuật <br>Toile de Jouy trên nền chất liệu lụa Latin đắt giá.</p>
+            <h2><?=$blogSP['title']?></h2>
+            <p><?=$blogSP['content']?></p>
         </div>
+    <?php } ?>
+
     </div>
 <div class="sp">
-    <div class="sanpham">
-        <div class="sanpham1">14%</div>
-        <img src="public/user/img/rm3.webp" alt="" class="anh1hover">
-        <img src="public/user/img/rm4.webp" alt="" class="anh2hover">
-        <div class="hover-content">
-            <div class="xn">Xem nhanh</div>
-        </div>
-        <div class="sanpham1">14%</div>
-        
-        <div class="gt">Kem Dưỡng Body Trẻ Hóa Da Toàn Thân Image BODY SPA......</div>
-        <div class="gia">
-            <span class="giamgia">1,400,000₫</span>
-            <span class="giamseo">1,190,000₫</span>
-        </div>
-        <button class="add-to-cart1">Thêm vào giỏ hàng</button>
-    </div>
-    <div class="sanpham">
-        <div class="sanpham1">14%</div>
-        <img src="public/user/img/rm5.webp" alt="" class="anh1hover">
-        <img src="public/user/img/rm6.webp" alt="" class="anh2hover">
-        <div class="hover-content">
-            <div class="xn">Xem nhanh</div>
+    <?php
+    $limitedproductDM = array_slice($productDM, 0, 6);
+    ?>
+    <?php foreach($limitedproductDM as $product){?>
+        <div class="sanpham">
             <div class="sanpham1">14%</div>
+            <img src="public/user/img/<?=$product['image1']?>" alt="" class="anh1hover">
+            <img src="public/user/img/<?=$product['image2']?>" alt="" class="anh2hover">
+            <div class="hover-content">
+                <div class="xn">Xem nhanh</div>
+                <div class="sanpham1">14%</div>
+            </div>
+            <div class="gt"><?=$product['name']?></div>
+            <div class="gia">
+                <span class="giamgia">1,500,000₫</span>
+                <span class="giamseo"><?=$product['price']?></span>
+            </div>
+            <button class="add-to-cart">Thêm vào giỏ hàng</button>
         </div>
-        
-        <div class="gt">Kem Dưỡng Da Mặt Chống Lão Hóa Image AGELESS Total Repair Crème</div>
-        <div class="gia">
-            <span class="giamgia">2,500,000₫</span>
-            <span class="giamseo">2,190,000₫</span>
-        </div>
-        <button class="add-to-cart1">Thêm vào giỏ hàng</button>
-    </div>
-
-
-
-    
-    <div class="sanpham">
-        <div class="sanpham1">14%</div>
-        <img src="public/user/img/rm7.webp" alt="" class="anh1hover">
-        <img src="public/user/img/rm8.webp" alt="" class="anh2hover">
-        <div class="hover-content">
-            <div class="xn">Xem nhanh</div>
-            <div class="sanpham1">14%</div>
-        </div>
-        
-        <div class="gt">Kem Dưỡng Da Mặt Phục Hồi Da Image Irescue Post Treatment</div>
-        <div class="gia">
-            <span class="giamgia">2,100,000₫</span>
-            <span class="giamseo">1,760,000₫</span>
-        </div>
-        <button class="add-to-cart1">Thêm vào giỏ hàng</button>
-    </div>
-
-
-
-    <div class="sanpham">
-        <div class="sanpham1">14%</div>
-        <img src="public/user/img/rm9.webp" alt="" class="anh1hover">
-        <img src="public/user/img/rm10.webp" alt="" class="anh2hover">
-        <div class="hover-content">
-            <div class="xn">Xem nhanh</div>
-            <div class="sanpham1">14%</div>
-        </div>
-        
-        <div class="gt">Kem Dưỡng Da Mặt Phục Hồi Và Chống Lão Hóa Image MD Restoring </div>
-        <div class="gia">
-            <span class="giamgia">3,400,000₫</span>
-            <span class="giamseo">2,930,000₫</span>
-        </div>
-        <button class="add-to-cart1">Thêm vào giỏ hàng</button>
-    </div>
+    <?php } ?>
 </div>
 </div>
 
@@ -214,37 +166,20 @@
 
 
 <div class="kt">
-    <div class="card">
-        <img src="public/user/img/gt1.webp" alt="Product 1">
-        <h3>DƯỠNG ẨM ĐÚNG CÁCH CHO DA</h3>
-        <div class="info">
-            <span class="date">09.01.2021</span>
-            <span class="category">F1GEN</span>
-            <span class="comments">3 Comments</span>
+    <?php
+    $limitedBlogs = array_slice($blogALL, 0, 3);
+    ?>
+    <?php foreach($limitedBlogs as $blog){ ?>
+        <div class="card">
+            <img src="public/user/img/<?=$blog['image']?>" alt="blog 1">
+            <h3><?=$blog['title']?></h3>
+            <div class="info">
+                <span class="date"><?=$blog['post_date']?></span>
+                <span class="category">F1GEN</span>
+                <span class="comments">3 Comments</span>
+            </div>
+            <p><?=$blog['content']?></p>
+            <a href="article.html" class="bt">Xem thêm</a>
         </div>
-        <p>“Dưỡng ẩm cho da” là cụm từ rất phổ biến. Nếu bạn gõ cụm từ “làm thế nào để dưỡng ẩm” cho ra đến 56 triệu kết quả...</p>
-        <a href="article.html" class="bt">Xem thêm</a>
-    </div>
-    <div class="card">
-        <img src="public/user/img/gt2.webp" alt="Product 2">
-        <h3>PHƯƠNG PHÁP SẢN XUẤT TINH DẦU</h3>
-        <div class="info">
-            <span class="date">09.01.2021</span>
-            <span class="category">F1GEN</span>
-            <span class="comments">3 Comments</span>
-        </div>
-        <p>Bài viết gốc trên Plant Therapy. Vitabox biên dịch. Các phương pháp sản xuất tinh dầu...</p>
-        <a href="article2.html" class="bt">Xem thêm</a>
-    </div>
-    <div class="card">
-        <img src="public/user/img/gt3.webp" alt="Product 3">
-        <h3>Mẹo làm cho làn da của bạn</h3>
-        <div class="info">
-            <span class="date">14.11.2020</span>
-            <span class="category">Cosmetic F1GEN</span>
-            <span class="comments">3 Comments</span>
-        </div>
-        <p>Thay vì phải đi spa với chi phí đắt đỏ hoặc mua các loại mỹ phẩm làm đẹp có giá trên trời...</p>
-        <a href="article3.html" class="bt">Xem thêm</a>
-    </div>
+    <?php } ?>
 </div>
