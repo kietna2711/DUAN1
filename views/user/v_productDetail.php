@@ -106,7 +106,7 @@
                     <div class="description-container">
                         <p>Nội dung đang được cập nhật</p>
                     </div>
-                    <h2>Sản phẩm đã xem</h2>
+                    <!-- <h2>Sản phẩm đã xem</h2> -->
                     <!-- <div class="product-list">
                         <div class="sanpham">
                             <div class="sanpham1">14%</div>
@@ -197,3 +197,47 @@
 
 
             </div>
+            <script>
+            // Countdown Timer for Flash Sale
+            function startCountdown(durationDays) {
+                const countdownElement = document.getElementById("flashSaleTimer");
+                let countdownDate = new Date().getTime() + durationDays * 24 * 60 * 60 * 1000;
+
+                const interval = setInterval(function () {
+                    let now = new Date().getTime();
+                    let distance = countdownDate - now;
+
+                    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    countdownElement.innerHTML = `${days} Ngày ${hours} Giờ ${minutes} Phút ${seconds} Giây`;
+
+                    // If the countdown is over, stop the timer
+                    if (distance < 0) {
+                        clearInterval(interval);
+                        countdownElement.innerHTML = "Hết thời gian";
+                    }
+                }, 1000);
+            }
+
+            // Start countdown with 149 days
+            startCountdown(149);
+
+            // Image switcher
+            function changeImage(src) {
+                document.getElementById('anhtong').src = src;
+                const thumbnails = document.querySelectorAll('.sanphamphu img');
+                thumbnails.forEach(img => img.classList.remove('active'));
+                document.querySelector(`.sanphamphu img[src="${src}"]`).classList.add('active');
+            }
+
+            // Quantity adjustment
+            function changeQuantity(amount) {
+                const quantityInput = document.getElementById('quantity');
+                let newQuantity = parseInt(quantityInput.value) + amount;
+                quantityInput.value = newQuantity > 0 ? newQuantity : 1;
+            }
+
+        </script>
