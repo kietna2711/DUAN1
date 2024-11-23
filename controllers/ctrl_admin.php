@@ -33,7 +33,7 @@ if (isset($_GET['view'])) {
         case 'categoryadmin':
             include_once "models/m_database.php";
             include_once "models/m_user.php";
-            $category = new Category();
+            // $category = new Category();
             // $getALLCategory = $category>getALLUser();
             include_once "views/admin/t_header.php";
             include_once "views/admin/v_category.php";
