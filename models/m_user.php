@@ -41,7 +41,6 @@
             $spl = "SELECT * FROM user WHERE email = '" . $email . "' AND password = '" . $password . "'";
             return $this->db->getAll($spl);
         }
-        
-        
+
     }
 ?>

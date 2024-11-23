@@ -3,8 +3,8 @@
             <h1>Chào mừng bạn đến với trang quản trị</h1>
             <p>Tại đây bạn có thể thực hiện mọi thứ.</p>
             <div class="overview">
-                <div class="stat-box">Tổng Số Người Dùng: 200</div>
-                <div class="stat-box">Tổng Số Đơn Hàng: 150</div>
+                <div class="stat-box">Tổng Số Người Dùng: <?php echo $totalUsers;?></div>
+                <div class="stat-box">Tổng Số Sản Phẩm: <?php echo $totalProducts;?></div>
                 <div class="stat-box">Tổng Doanh Thu: 1 tỷ</div>
             </div>
         </div>

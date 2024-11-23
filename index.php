@@ -12,9 +12,9 @@ if(isset($_GET['ctrl'])){
         case 'user':
             include_once "controllers/ctrl_user.php";
             break;
-        case 'admin':
-            include_once "controllers/ctrl_admin.php";
-            break;
+        // case 'admin':
+        //     include_once "controllers/ctrl_admin.php";
+        //     break;
         default:
             echo "Trang không tồn tại";
             break;
