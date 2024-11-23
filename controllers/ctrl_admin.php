@@ -83,12 +83,17 @@ if (isset($_GET['view'])) {
     include_once "models/m_user.php";
     include_once "models/m_product.php";
     include_once "models/m_category.php";
-    // $db = new Category();
-    // $category = $db->getALLDM();
-    var_dump($category);
     $users = new User();
+    $products = new Product();
+
     $getALLUser = $users->getALLUser();
-                // var_dump($getALLUser);
+    $getALLProduct = $products->getALLSP();
+
+    function getTotalCount($items) {
+        return count($items);
+    }
+    $totalUsers = getTotalCount($getALLUser);
+    $totalProducts = getTotalCount($getALLProduct);
     include_once "views/admin/t_header.php";
     include_once "views/admin/v_home.php";
     include_once "views/admin/t_footer.php";
