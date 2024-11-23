@@ -56,11 +56,11 @@
                             <div class="other-actions">
                                 <div class="button consult">
                                     <p>TƯ VẤN</p>
-                                    <span>Tư vấn thiết kế nội thất tùy chọn</span>
+                                    <span>Tư vấn sản phẩm tùy chọn</span>
                                 </div>
                                 <div class="button contact">
-                                    <p>LIÊN HỆ</p>
-                                    <span>Chúng tôi luôn bên bạn 24/7</span>
+                                    <p>Giỏ hàng</p>
+                                    <span>Thêm giỏ hàng</span>
                                 </div>
                             </div>
                         </div>

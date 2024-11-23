@@ -4,16 +4,18 @@
         <a href="?ctrl=admin&view=add-category"><i class="fa-solid fa-plus"></i>Thêm mới</a>
     </div>
     <table id="userTable">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Tên danh mục</th>
-                <th>Hình ảnh danh mục</th>
-                <th>Mô tả</th>
-                <th>Số lượng sản phẩm</th>
-                <th>Ẩn</th>
-                <th>Thao tác</th>
-            </tr>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Hình ảnh sản phẩm</th>
+                        <th>Mô tả</th>
+                        <th>Số lượng</th>
+                        <th>Lượt bán</th>
+                        <th>Ẩn</th>
+                        <th>Thao tác</th>
+                    </tr>
+                </thead>
         </thead>
         <tbody>
             <?php foreach ($getALLProduct as $product): ?>
@@ -26,6 +28,7 @@
                     </td>
                     <td><?= $product['description'] ?></td>
                     <td><?= $product['quantity'] ?></td>
+                    <td><?= $product['sold'] ?></td>
                     <td>
                         <input type="checkbox" <?= $product['quantity'] == 0 ? 'disabled' : '' ?>>
                     </td>
