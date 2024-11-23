@@ -11,7 +11,8 @@ if (isset($_GET['view'])) {
             $products = new Product();
             // $product=$_GET['categiry_id'];
             // $productct=$product->getDMById($pcategiry_id);
-
+            $productHot=$products->getALLdaban(0,8);
+            $productDM = $products ->getDMById(2);
             // Kiểm tra trang hiện tại
             if (isset($_GET['trang'])) {
                 $st = $_GET['trang'];  // Trang hiện tại

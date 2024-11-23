@@ -24,16 +24,31 @@ if (isset($_GET['view'])) {
             include_once "views/user/t_footer.php";
             break;
         case 'blog':
+            include_once "models/m_database.php";
+            include_once "models/m_product.php";
+            $product =new Product();
+            $productHot=$product->getALLdaban(0,8);
+            $productDM = $product ->getDMById(2);
             include_once "views/user/t_header1.php";
             include_once "views/user/v_blog.php";
             include_once "views/user/t_footer.php";
             break;    
         case 'introduce':
+            include_once "models/m_database.php";
+            include_once "models/m_product.php";
+            $product =new Product();
+            $productHot=$product->getALLdaban(0,8);
+            $productDM = $product ->getDMById(2);
             include_once "views/user/t_header1.php";
             include_once "views/user/v_introduce.php";
             include_once "views/user/t_footer.php";
             break;
         case 'contact':
+            include_once "models/m_database.php";
+            include_once "models/m_product.php";
+            $product =new Product();
+            $productHot=$product->getALLdaban(0,8);
+            $productDM = $product ->getDMById(2);
             include_once "views/user/t_header1.php";
             include_once "views/user/v_contact.php";
             include_once "views/user/t_footer.php";

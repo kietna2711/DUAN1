@@ -39,10 +39,12 @@
                 <li class="has-submenu">
                     <a href="?ctrl=product&view=category">Sản phẩm hot</a>
                     <ul class="submenu">
-                        <li><a href="ctsp.html">AGELESS Total Repair Crème</a></li>
-                        <li><a href="#">AGELESS Total Retinol A Crème</a></li>
-                        <li><a href="#">PREVENTION+ Ultra Sheer Spray SPF45+</a></li>
-                        <li><a href="#">Image The MAX Stem Cell Crème</a></li>
+                    <?php foreach($productHot as $hot){        
+                    $link="?ctrl=product&view=productdetail&product_id=".$hot['product_id'];
+                    ?>
+
+                        <li><a href="ctsp.html"><?=$hot['name']?></a></li>
+                        <?php } ?>
                     </ul>
                 </li>
                 <li><a href="?ctrl=page&view=blog">Tin tức nổi bật</a></li>
