@@ -30,14 +30,14 @@ if (isset($_GET['view'])) {
             if (isset($_POST['sign_in']) && $_POST['sign_in']) {
                 // Gọi hàm login để kiểm tra thông tin người dùng
                 $kt = $user->login($_POST['email'], $_POST['password']);
-                var_dump($kt);
+                // var_dump($kt);
                 
                 // Kiểm tra nếu tìm thấy người dùng
                 if ($kt && $_POST['password'] === $kt[0]['password']) { 
                     // Mật khẩu chính xác, lưu thông tin vào session
                     $_SESSION['user'] = $kt[0];
                     if ($kt[0]['role'] === "User") {
-                        // header('location:index.php');
+                        header('location:index.php');
                     } else {
                         header('location:Admin.php?ctrl=admin');
                     }
