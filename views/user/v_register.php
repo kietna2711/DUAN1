@@ -8,33 +8,32 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="/public/user/css/singnup.css">
+    <link rel="stylesheet" href="public/user/css/singnup.css">
     <!-- <link rel="stylesheet" href="/public/user/css/s.css"" /> -->
     <title>Sign in & Sign up Form</title>
-    <style>
-        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
-
-
-    </style>
   </head>
   <body>
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
-          <form action="#" class="sign-in-form">
+            <!-- đăng nhập -->
+          <form action="" method="post" class="sign-in-form">
             <h2 class="title">Sign in</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
+              <input type="text" placeholder="Email" name="email" />
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+              <input type="password" placeholder="Password" name="password" />
             </div>
-            <input type="submit" value="Login" class="btn solid" />
-            <p class="social-text">Or Sign in with social platforms</p>
+            <input type="submit" value="Login" name="sign_in" class="btn solid" />
+            <?php if (!empty($message2)) { ?>
+            <div class="message"><?php echo $message2; ?></div>
+            <?php } ?>
+            <!-- <p class="social-text">Or Sign in with social platforms</p> -->
             <div class="social-media">
-              <a href="#" class="social-icon">
+              <!-- <a href="#" class="social-icon">
                 <i class="fab fa-facebook-f"></i>
               </a>
               <a href="#" class="social-icon">
@@ -45,27 +44,31 @@
               </a>
               <a href="#" class="social-icon">
                 <i class="fab fa-linkedin-in"></i>
-              </a>
+              </a> -->
             </div>
           </form>
-          <form action="#" class="sign-up-form">
+          <!-- Dăng ký -->
+          <form action="" method="post" class="sign-up-form"> 
             <h2 class="title">Sign up</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
+              <input type="text" placeholder="Username" name="name"/>
             </div>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" />
+              <input type="email" placeholder="Email" name="email"/>
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+              <input type="password" placeholder="Password" name="password" />
             </div>
-            <input type="submit" class="btn" value="Sign up" />
-            <p class="social-text">Or Sign up with social platforms</p>
+            <input type="submit" class="btn" value="Sign up" name="sign_up"/>
+            <?php if (!empty($message1)) { ?>
+            <div class="message"><?php echo $message1; ?></div>
+            <?php } ?>
+            <!-- <p class="social-text">Or Sign up with social platforms</p> -->
             <div class="social-media">
-              <a href="#" class="social-icon">
+              <!-- <a href="#" class="social-icon">
                 <i class="fab fa-facebook-f"></i>
               </a>
               <a href="#" class="social-icon">
@@ -76,7 +79,7 @@
               </a>
               <a href="#" class="social-icon">
                 <i class="fab fa-linkedin-in"></i>
-              </a>
+              </a> -->
             </div>
           </form>
         </div>
@@ -94,7 +97,7 @@
               Sign up
             </button>
           </div>
-          <img src="img/Remove-bg.ai_1730370314470.png" class="image" alt="" />
+          <img src="public/user/img/Remove-bg.ai_1730370314470.png" class="image" alt="" />
         </div>
         <div class="panel right-panel">
           <div class="content">
@@ -107,7 +110,7 @@
               Sign in
             </button>
           </div>
-          <img src="img/register.svg" class="image" alt="" />
+          <img src="public/user/img/register.svg" class="image" alt="" />
         </div>
       </div>
     </div>
