@@ -29,22 +29,6 @@ class Product extends database {
         $sql = "DELETE FROM product WHERE product_id = $product_id";
         return $this->db->update($sql);
     }
-    public function toggleVisibilitySP($product_id) {
-        // Kiểm tra trạng thái hiện tại
-        $sql = "SELECT status FROM product WHERE product_id = :id";
-        $currentStatus = $this->db->getOne($sql, [':id' => $product_id]);
-        
-        if ($currentStatus) {
-            // Lấy trạng thái hiện tại và đảo ngược
-            $newStatus = ($currentStatus['status'] == 1) ? 0 : 1;
-            // Cập nhật trạng thái
-            $sql = "UPDATE product SET status = :status WHERE product_id = :id";
-            return $this->db->update($sql, [':status' => $newStatus, ':id' => $product_id]);
-        } else {
-            // Không tìm thấy sản phẩm
-            return false;
-        }
-    }
 
     public function getALLdaban($sold, $limit) {
         $sql = "SELECT * FROM product WHERE 1";
