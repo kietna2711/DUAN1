@@ -36,6 +36,7 @@ if (isset($_GET['view'])) {
                 if ($kt && $_POST['password'] === $kt[0]['password']) { 
                     // Mật khẩu chính xác, lưu thông tin vào session
                     $_SESSION['user'] = $kt[0];
+                    
                     if ($kt[0]['role'] === "User") {
                         header('location:index.php');
                     } else {

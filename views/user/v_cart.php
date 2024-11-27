@@ -41,6 +41,7 @@
         }
 
         .cart-table th, .cart-table td {
+            font-size:18px;
             padding: 20px;
             text-align: center;
             border-bottom: 1px solid #eee;
@@ -124,7 +125,7 @@
             color: #333;
         }
 
-        .checkout-btn {
+        .thanhtoan {
             display: block;
             width: 100%;
             float: right;
@@ -143,7 +144,7 @@
             text-decoration: none;
         }
 
-        .checkout-btn:hover {
+        .thanhtoan:hover {
             background-color: #ff3f3f;
             transform: translateY(-2px);
         }
@@ -153,41 +154,81 @@
             font-weight: bold;
         }
 
+        .delete-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.delete-btn:hover {
+    background-color: #ff1a1a;
+    transform: translateY(-2px);
+}
+
     </style>
 </head>
 <body>
-    <h1>Giỏ hàng</h1>
-    <table class="cart-table">
-        <thead>
-            <tr>
-                <th>Thông tin sản phẩm</th>
-                <th>Đơn giá</th>
-                <th>Số lượng</th>
-                <th>Thành tiền</th>
-            </tr>
-        </thead>
-        <tbody id="cart-items">
-            <tr>
-                <td class="product-info">
-                    <img src="public/user/img/rm10.webp" alt="Product Image" class="product-image">
-                    <span class="product-name">Sữa rửa mặt Senka</span>
-                </td>
-                <td class="product-price">80,000₫</td>
-                <td class="product-quantity">
-                    <div class="product-quantity-controls">
-                        <button class="quantity-btn" onclick="decreaseQuantity()">-</button>
-                        <input type="text" class="quantity-input" id="quantity" value="1" readonly>
-                        <button class="quantity-btn" onclick="increaseQuantity()">+</button>
-                    </div>
-                </td>
-                <td class="product-total" id="product-total">80,000₫</td>
-            </tr>
-        </tbody>
-    </table>
-    <div class="cart-total">
-        <span>Tổng tiền: </span><span id="total-price">80,000₫</span>
-    </div>
-   <a href="thanhtoan.html"> <button class="checkout-btn">Thanh toán</button></a>
+<h1>Giỏ hàng</h1>
+<table class="cart-table">
+    <thead>
+        <tr>
+            <th>Thông tin sản phẩm</th>
+            <th>Đơn giá</th>
+            <th>Số lượng</th>
+            <th>Thành tiền</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody id="cart-items">
+    <?php
+$totalPrice = 0; // Biến để tính tổng tiền
+
+// Kiểm tra xem $cartItems có được định nghĩa và không phải là null hay không
+if (isset($cartItems) && !empty($cartItems)) {
+    foreach ($cartItems as $item) {
+        $productTotal = $item['price'] * $item['quantity']; // Tính thành tiền cho sản phẩm
+        $totalPrice += $productTotal; // Cộng dồn vào tổng tiền giỏ hàng
+?>
+        <tr>
+            <td class="product-info">
+                <!-- Sửa lại để hiển thị đúng ảnh -->
+                <img src="public/user/img/<?php echo $item['image1']; ?>" alt="Product Image" class="product-image">
+                <span class="product-name"><?php echo $item['product_name']; ?></span>
+            </td>
+            <td class="product-price"><?php echo number_format($item['price'], 0, ',', '.') . '₫'; ?></td>
+            <td class="product-quantity">
+                <div class="product-quantity-controls">
+                    <button class="quantity-btn" onclick="decreaseQuantity()">-</button>
+                    <input type="text" class="quantity-input" id="quantity" value="<?php echo $item['quantity']; ?>" readonly>
+                    <button class="quantity-btn" onclick="increaseQuantity()">+</button>
+                </div>
+            </td>
+            <td class="product-total" id="product-total"><?php echo number_format($productTotal, 0, ',', '.') . '₫'; ?></td>
+            <td>
+            <a class="delete-btn" onclick="deleteItem(this)">Xóa</a>
+            </td>
+
+        </tr>
+<?php
+    }
+} else {
+    echo '<tr><th colspan="4">Vui lòng đăng nhập để thêm giỏ hàng</th></tr>';
+}
+?>
+
+    </tbody>
+</table>
+<div class="cart-total">
+    <span>Tổng tiền: </span><span id="total-price"><?php echo number_format($totalPrice, 0, ',', '.') . '₫'; ?></span>
+</div>
+
+
+ <a class="thanhtoan">Thanh toán</a>
 
     <script>
         const pricePerUnit = 80000; // Giá của sản phẩm

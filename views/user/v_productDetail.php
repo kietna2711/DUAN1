@@ -90,7 +90,11 @@
                                     <span class="giamgia">1,500,000₫</span>
                                     <span class="giamseo"><?=$GY['price']?></span>
                                 </div>
-                                <button class="add-to-cart">Thêm vào giỏ hàng</button>
+                                <form action="?ctrl=product&view=cart" method="post">
+                                    <input type="hidden" name="product_id" value="<?=$GY['product_id']?>">
+                                    <input type="hidden" name="quantity" value="1">
+                                    <input type="submit" name="addCart" class="add-to-cart" value="Thêm vào giỏ hàng">
+                                </form>
                             </div>
                             </a>
                         <?php } ?>

@@ -1,4 +1,5 @@
 <?php
+
 if (isset($_GET['view'])) {
     switch ($_GET['view']) {
         case 'category': 
@@ -49,6 +50,34 @@ if (isset($_GET['view'])) {
             include_once "views/user/t_footer.php";
             break;
         case 'cart':
+            include_once "models/m_database.php";
+            include_once "models/m_cart.php";
+            include_once "models/m_user.php";
+            $eror = '';
+            if (isset($_SESSION['user']['user_id'])) {
+                $user_id = $_SESSION['user']['user_id'];
+                $cart = new Cart();
+                $cartItems = $cart->getAllCart($user_id);
+
+                if (isset($_POST['addCart'])) {
+                    $quantity = $_POST['quantity'];
+                    $product_id = $_POST['product_id'];
+                    $cartItem = $cart->getCartById($user_id, $product_id);
+            
+                    if ($cartItem) {
+                        $newQuantity = $cartItem['quantity'] + $quantity;
+                        $cart->updateCart($user_id, $product_id, $newQuantity);
+                    } else {
+                        $cart->addProductToCart($user_id, $product_id, $quantity);
+                    }
+                    header("Location: ?ctrl=product&view=cart");
+                    exit();  // Ngừng mã tiếp theo, ngăn chặn tiếp tục xử lý
+                }
+            } else {
+                // $error = "Bạn chưa đăng nhập!";
+            }
+            
+            
             include_once "views/user/t_header1.php";
             include_once "views/user/v_cart.php";
             include_once "views/user/t_footer.php";

@@ -36,7 +36,7 @@
             <div class="right-icons">
                 <a href="?ctrl=user&view=register"><img src="public/user/img/user-removebg-preview.png" alt=""></a>
                 <a href="#"><img src="public/user/img/love-removebg-preview.png" alt=""></a>
-                <a href="#"><img src="public/user/img/giohang-removebg-preview.png" alt=""></i></a>
+                <a href="?ctrl=product&view=cart"><img src="public/user/img/giohang-removebg-preview.png" alt=""></i></a>
             </div>
         </div>
         <nav class="navbar">
