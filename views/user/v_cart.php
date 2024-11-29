@@ -173,61 +173,56 @@
     </style>
 </head>
 <body>
-<h1>Giỏ hàng</h1>
-<table class="cart-table">
-    <thead>
-        <tr>
-            <th>Thông tin sản phẩm</th>
-            <th>Đơn giá</th>
-            <th>Số lượng</th>
-            <th>Thành tiền</th>
-            <th>Thao tác</th>
-        </tr>
-    </thead>
-    <tbody id="cart-items">
-    <?php
-$totalPrice = 0; // Biến để tính tổng tiền
+    <h1>Giỏ hàng</h1>
+    <table class="cart-table">
+        <thead>
+            <tr>
+                <th>Thông tin sản phẩm</th>
+                <th>Đơn giá</th>
+                <th>Số lượng</th>
+                <th>Thành tiền</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody id="cart-items">
+        <?php
+        $totalPrice = 0;
 
-// Kiểm tra xem $cartItems có được định nghĩa và không phải là null hay không
-if (isset($cartItems) && !empty($cartItems)) {
-    foreach ($cartItems as $item) {
-        $productTotal = $item['price'] * $item['quantity']; // Tính thành tiền cho sản phẩm
-        $totalPrice += $productTotal; // Cộng dồn vào tổng tiền giỏ hàng
-?>
-        <tr>
-            <td class="product-info">
-                <!-- Sửa lại để hiển thị đúng ảnh -->
-                <img src="public/user/img/<?php echo $item['image1']; ?>" alt="Product Image" class="product-image">
-                <span class="product-name"><?php echo $item['product_name']; ?></span>
-            </td>
-            <td class="product-price"><?php echo number_format($item['price'], 0, ',', '.') . '₫'; ?></td>
-            <td class="product-quantity">
-                <div class="product-quantity-controls">
-                    <!-- <button class="quantity-btn" onclick="decreaseQuantity()">-</button> -->
-                    <input type="text" class="quantity-input" id="quantity" value="<?php echo $item['quantity']; ?>" readonly>
-                    <!-- <button class="quantity-btn" onclick="increaseQuantity()">+</button> -->
-                </div>
-            </td>
-            <td class="product-total" id="product-total"><?php echo number_format($productTotal, 0, ',', '.') . '₫'; ?></td>
-            <td>
-            <a class="delete-btn" href="?ctrl=product&view=cart&id=<?=$item['product_id'] ?>">Xóa</a>
-            </td>
+        if (isset($cartItems) && !empty($cartItems)) {
+            foreach ($cartItems as $item) {
+                $productTotal = $item['price'] * $item['quantity'];
+                $totalPrice += $productTotal;
+        ?>
+            <tr>
+                <td class="product-info">
+                    <img src="public/user/img/<?php echo $item['image1']; ?>" alt="Product Image" class="product-image">
+                    <span class="product-name"><?php echo $item['product_name']; ?></span>
+                </td>
+                <td class="product-price"><?php echo number_format($item['price'], 0, ',', '.') . '₫'; ?></td>
+                <td class="product-quantity">
+                    <input type="text" class="quantity-input" value="<?php echo $item['quantity']; ?>" readonly>
+                </td>
+                <td class="product-total"><?php echo number_format($productTotal, 0, ',', '.') . '₫'; ?></td>
+                <td>
+                    <a class="delete-btn" href="?ctrl=product&view=cart&id=<?=$item['product_id'] ?>">Xóa</a>
+                </td>
+            </tr>
+        <?php
+            }
+        } else {
+            echo '<tr><th colspan="4">Giỏ hàng của bạn trống</th></tr>';
+        }
+        ?>
+        </tbody>
+    </table>
+    <div class="cart-total">
+        <span>Tổng tiền: </span><span id="total-price"><?php echo number_format($totalPrice, 0, ',', '.') . '₫'; ?></span>
+    </div>
 
-        </tr>
-<?php
-    }
-} else {
-    echo '<tr><th colspan="4">Vui lòng đăng nhập để thêm giỏ hàng</th></tr>';
-}
-?>
-    </tbody>
-</table>
-<div class="cart-total">
-    <span>Tổng tiền: </span><span id="total-price"><?php echo number_format($totalPrice, 0, ',', '.') . '₫'; ?></span>
-</div>
+    <!-- <a href="?ctrl=product&view=pay" class="btn-checkout">Thanh toán</a> -->
+</form>
 
-
- <a class="thanhtoan">Thanh toán</a>
+<a href="?ctrl=product&view=pay" class="thanhtoan">Thanh toán</a>
 
     <!-- <script>
         const pricePerUnit = 80000; // Giá của sản phẩm

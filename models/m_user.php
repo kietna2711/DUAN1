@@ -9,9 +9,13 @@
             $spl = "SELECT * FROM user";
             return $this->db->getAll($spl);
         }
-        public function getOneId($user_id){//Hiển thị theo id
-            $spl = "SELECT * FROM user WHERE user_id = ?";
-            return $this->db->getOne($spl,[$user_id]);
+        // public function getOneId($user_id){//Hiển thị theo id
+        //     $spl = "SELECT * FROM user WHERE user_id = ?";
+        //     return $this->db->getOne($spl,[$user_id]);
+        // }
+        public function getById($user_id) {
+            $sql = "SELECT * FROM user WHERE user_id = " .$user_id;
+            return $this->db->getAll($sql);
         }
         public function createUser($name, $email, $password, $address, $phone) {
             $sql = 'INSERT INTO user (name, email, password, address, phone) VALUES ("' . $name . '", "' . $email . '", "' . $password . '", "' . $address . '", "' . $phone . '")';

@@ -114,13 +114,23 @@ if (isset($_GET['view'])) {
             break;  
         case 'pay':
             include_once "models/m_database.php";
+            include_once "models/m_cart.php";
+            include_once "models/m_user.php";
             include_once "models/m_product.php";
             include_once "models/m_category.php";
             $db = new Category();
+            $user = new User();
             $categorys = $db->getALLDM();
             $product =new Product();
+            $cart = new Cart();
             $productHot=$product->getALLdaban(0,8);
-            $productDM = $product ->getDMById(2);
+            if (isset($_SESSION['user']['user_id'])) {
+                $user_id = $_SESSION['user']['user_id'];
+                $users = $user->getById($user_id);
+                // var_dump($users);
+                $cartItems = $cart->getAllCart($user_id);
+            }
+            
             include_once "views/user/t_header1.php";
             include_once "views/user/v_pay.php";
             include_once "views/user/t_footer.php";
