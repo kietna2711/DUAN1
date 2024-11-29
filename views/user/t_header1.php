@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="public/user/css/ctsp.css">
     <link rel="stylesheet" href="public/user/css/danhmuc.css">
     <link rel="stylesheet" href="public/user/css/footer.css">
-    <!-- <link rel="stylesheet" href="public/user/css/lienhe.css"> -->
+    <link rel="stylesheet" href="public/user/css/lienhe.css">
+    <link rel="stylesheet" href="public/user/css/thanhtoan1.css">
+
 </head>
 <body>
     <header>

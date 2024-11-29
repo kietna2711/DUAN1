@@ -91,7 +91,9 @@ if (isset($_GET['view'])) {
     // var_dump($blogSP);
     $product =new Product();
     $productHot=$product->getALLdaban(0,8);
-    $productDM = $product ->getDMById(2);
+    $productNew =$product->getNewProducts(6);
+    // $productDM = $product ->getDMById(2);
+    
 
     // var_dump($productDM);
     // var_dump($productHot);

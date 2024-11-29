@@ -203,14 +203,14 @@ if (isset($cartItems) && !empty($cartItems)) {
             <td class="product-price"><?php echo number_format($item['price'], 0, ',', '.') . '₫'; ?></td>
             <td class="product-quantity">
                 <div class="product-quantity-controls">
-                    <button class="quantity-btn" onclick="decreaseQuantity()">-</button>
+                    <!-- <button class="quantity-btn" onclick="decreaseQuantity()">-</button> -->
                     <input type="text" class="quantity-input" id="quantity" value="<?php echo $item['quantity']; ?>" readonly>
-                    <button class="quantity-btn" onclick="increaseQuantity()">+</button>
+                    <!-- <button class="quantity-btn" onclick="increaseQuantity()">+</button> -->
                 </div>
             </td>
             <td class="product-total" id="product-total"><?php echo number_format($productTotal, 0, ',', '.') . '₫'; ?></td>
             <td>
-            <a class="delete-btn" onclick="deleteItem(this)">Xóa</a>
+            <a class="delete-btn" href="?ctrl=product&view=cart&id=<?=$item['product_id'] ?>">Xóa</a>
             </td>
 
         </tr>
@@ -220,7 +220,6 @@ if (isset($cartItems) && !empty($cartItems)) {
     echo '<tr><th colspan="4">Vui lòng đăng nhập để thêm giỏ hàng</th></tr>';
 }
 ?>
-
     </tbody>
 </table>
 <div class="cart-total">
@@ -230,7 +229,7 @@ if (isset($cartItems) && !empty($cartItems)) {
 
  <a class="thanhtoan">Thanh toán</a>
 
-    <script>
+    <!-- <script>
         const pricePerUnit = 80000; // Giá của sản phẩm
 
         function decreaseQuantity() {
@@ -257,4 +256,4 @@ if (isset($cartItems) && !empty($cartItems)) {
             document.getElementById('product-total').textContent = `${totalPrice.toLocaleString()}₫`;
             document.getElementById('total-price').textContent = `${totalPrice.toLocaleString()}₫`;
         }
-    </script>
+    </script> -->

@@ -63,11 +63,11 @@ if (isset($_GET['view'])) {
             $db = new Category();
             $categorys = $db->getALLDM();
             $product =new Product();
+            $cart = new Cart();
             $productHot=$product->getALLdaban(0,8);
-            $eror = '';
+            // $eror = '';
             if (isset($_SESSION['user']['user_id'])) {
                 $user_id = $_SESSION['user']['user_id'];
-                $cart = new Cart();
                 $cartItems = $cart->getAllCart($user_id);
 
                 if (isset($_POST['addCart'])) {
@@ -87,12 +87,44 @@ if (isset($_GET['view'])) {
             } else {
                 // $error = "Bạn chưa đăng nhập!";
             }
-            
-            
+            if (isset($_SESSION['user']['user_id'])) {
+                $user_id = $_SESSION['user']['user_id'];
+
+                // Kiểm tra nếu có product_id trong URL để xóa sản phẩm khỏi giỏ hàng
+                if (isset($_GET['id']) && !empty($_GET['id'])) {
+                    $product_id = $_GET['id'];
+                    if (is_numeric($product_id)) {
+                        $cart->deleteCart($user_id, $product_id);
+                        header("Location: ?ctrl=product&view=cart");
+                        exit();  // Dừng mã tiếp theo để ngừng xử lý
+                    } else {
+                        echo "ID sản phẩm không hợp lệ.";
+                    }
+                } else {
+                    
+                }
+            } else {
+                echo "Bạn cần đăng nhập để thực hiện thao tác này.";
+            }
+
+
             include_once "views/user/t_header1.php";
             include_once "views/user/v_cart.php";
             include_once "views/user/t_footer.php";
             break;  
+        case 'pay':
+            include_once "models/m_database.php";
+            include_once "models/m_product.php";
+            include_once "models/m_category.php";
+            $db = new Category();
+            $categorys = $db->getALLDM();
+            $product =new Product();
+            $productHot=$product->getALLdaban(0,8);
+            $productDM = $product ->getDMById(2);
+            include_once "views/user/t_header1.php";
+            include_once "views/user/v_pay.php";
+            include_once "views/user/t_footer.php";
+            break;
         default:
             echo "TRang không tồn tại";
             break;
