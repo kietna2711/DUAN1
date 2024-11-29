@@ -7,7 +7,7 @@
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="icon" href="public/user/img/logo.png">
-    <link rel="stylesheet" href="public/admin/css/style.css">
+    <link rel="stylesheet" href="public/admin/css/style1.css">
 </head>
 <body>
    <nav id="sidebar">
@@ -27,7 +27,7 @@
                     <span>Quản lí Tài khoản</span>
                 </a>
             </li>
-            <li>
+            <!-- <li>
                 <button onclick="toggleSuMenu(this)" class="dropdown-btn">
                     <i class="fa-solid fa-list"></i>
                     <span>Quản lí danh mục</span>
@@ -37,6 +37,18 @@
                     <li><a href="?ctrl=admin&view=categoryadmin">Danh mục</a></li>
                     <li><a href="?ctrl=admin&view=productadmin">Sản phẩm</a></li>
                 </ul>
+            </li> -->
+            <li class="active">
+                <a href="?ctrl=admin&view=categoryadmin">
+                <i class="fa-solid fa-table"></i>
+                    <span>Danh mục</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="?ctrl=admin&view=productadmin">
+                <i class="fa-solid fa-cart-shopping"></i>
+                    <span>Sản phẩm</span>
+                </a>
             </li>
             <li class="active">
                 <a href="?ctrl=admin&view=oderadmin">

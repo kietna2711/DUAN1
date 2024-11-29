@@ -10,14 +10,25 @@ if (isset($_GET['view'])) {
             include_once "models/m_database.php";
             include_once "models/m_product.php";
             include_once "models/m_blog.php";
-            $blog = new Blog();
-            $blogALL = $blog ->getALLBlog();
-            // var_dump($blogALL);
-            $blogSP = $blog->getOneIdBlog(1);
-            // var_dump($blogSP);
-            $product =new Product();
-            $productHot=$product->getALLdaban(0,8);
-            $productDM = $product ->getDMById(2);
+            include_once "models/m_category.php";
+            $db = new Category();
+            $categorys = $db->getALLDM();
+            if (isset($_GET["category_id"])) {
+                $productDM = $product ->getDMById($_GET["category_id"]);
+            }else{
+                // var_dump($categorys);
+                $blog = new Blog();
+                $blogALL = $blog ->getALLBlog();
+                // var_dump($blogALL);
+                $blogSP = $blog->getOneIdBlog(1);
+                // var_dump($blogSP);
+                $product =new Product();
+                $productHot=$product->getALLdaban(0,8);
+                $productNew =$product->getNewProducts(6);
+                // $productDM = $product ->getDMById(2);
+            }
+
+
             // var_dump($productHot);
             include_once "views/user/t_header.php";
             include_once "views/user/v_home.php";
@@ -26,16 +37,22 @@ if (isset($_GET['view'])) {
         case 'blog':
             include_once "models/m_database.php";
             include_once "models/m_product.php";
+            include_once "models/m_category.php";
+            $db = new Category();
+            $categorys = $db->getALLDM();
             $product =new Product();
             $productHot=$product->getALLdaban(0,8);
             $productDM = $product ->getDMById(2);
             include_once "views/user/t_header1.php";
             include_once "views/user/v_blog.php";
             include_once "views/user/t_footer.php";
-            break;    
+            break;   
         case 'introduce':
             include_once "models/m_database.php";
             include_once "models/m_product.php";
+            include_once "models/m_category.php";
+            $db = new Category();
+            $categorys = $db->getALLDM();
             $product =new Product();
             $productHot=$product->getALLdaban(0,8);
             $productDM = $product ->getDMById(2);
@@ -46,6 +63,9 @@ if (isset($_GET['view'])) {
         case 'contact':
             include_once "models/m_database.php";
             include_once "models/m_product.php";
+            include_once "models/m_category.php";
+            $db = new Category();
+            $categorys = $db->getALLDM();
             $product =new Product();
             $productHot=$product->getALLdaban(0,8);
             $productDM = $product ->getDMById(2);
@@ -61,6 +81,9 @@ if (isset($_GET['view'])) {
     include_once "models/m_database.php";
     include_once "models/m_product.php";
     include_once "models/m_blog.php";
+    include_once "models/m_category.php";
+    $db = new Category();
+    $categorys = $db->getALLDM();
     $blog = new Blog();
     $blogALL = $blog ->getALLBlog();
     // var_dump($blogALL);

@@ -1,7 +1,7 @@
 <div class="table">
     <div class="title">
-        <h1>Quản lý danh mục</h1>
-        <a href="?ctrl=admin&view=add-category"><i class="fa-solid fa-plus"></i>Thêm mới</a>
+        <h1>Quản lý sản phẩm</h1>
+        <a href="?ctrl=admin&view=add-product"><i class="fa-solid fa-plus"></i>Thêm mới</a>
     </div>
     <table id="userTable">
                 <thead>
@@ -11,6 +11,7 @@
                         <th>Hình ảnh sản phẩm</th>
                         <th>Mô tả</th>
                         <th>Số lượng</th>
+                        <th>Giá</th>
                         <th>Lượt bán</th>
                         <th>Ẩn</th>
                         <th>Thao tác</th>
@@ -28,13 +29,20 @@
                     </td>
                     <td><?= $product['description'] ?></td>
                     <td><?= $product['quantity'] ?></td>
+                    <td><?= $product['price'] ?></td>
                     <td><?= $product['sold'] ?></td>
                     <td>
-                        <input type="checkbox" <?= $product['quantity'] == 0 ? 'disabled' : '' ?>>
+                        <form method="POST" action="Admin.php?ctrl=admin&view=productadmin">
+                            <input type="hidden" name="product_id" value="<?= $product['product_id'] ?>">
+                            <input type="hidden" name="current_status" value="<?= $product['hidden'] ?>">
+                            <button class="hidden" type="submit" name="toggle_status" class="btn-toggle">
+                                <?= ($product['hidden'] === 'HIEN') ? 'Ẩn' : 'Hiện' ?>
+                            </button>
+                        </form>
                     </td>
                     <td>
                         <button class="btn-i">
-                            <i class="fa-solid fa-pen-to-square"></i>
+                           <a class="fa-solid fa-pen-to-square" href="Admin.php?ctrl=admin&view=update-product&id=<?=$product['product_id']?>"></a>
                         </button>
                     </td>
                 </tr>

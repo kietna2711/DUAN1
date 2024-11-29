@@ -82,8 +82,16 @@
 <div class="tgoiyt">
 <div class="tgoiy">
     <div class="goiy">
-        <h1>Gợi ý - Được xem nhiều</h1>
+        <h1>Danh mục:</h1>
+        <?php foreach($categorys as $category){ ?>
         <div class="xemnhiu">
+            <div class="item">
+                <img src="public/user/img/<?= $category['image_url'] ?>" alt="Sữa tắm">
+                <p><?= $category['category_name'] ?></p>
+            </div>
+        </div>
+        <?php } ?>
+        <!-- <div class="xemnhiu">
             <div class="item">
                 <img src="public/user/img/st1.webp" alt="Sữa tắm">
                 <p>Sữa tắm</p>
@@ -116,7 +124,7 @@
                 <img src="public/user/img/st8.webp" alt="Dầu xả">
                 <p>Dầu xả</p>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 </div>
@@ -124,7 +132,7 @@
 
 
 <div class="sp-banchay">
-        <h1 class="header">Sữa tắm</h1>
+        <h1 class="header">Sản phẩm mới</h1>
 </div>
 <div class="whenin">
     <div class="spgy">
@@ -139,9 +147,9 @@
     </div>
 <div class="sp">
     <?php
-    $limitedproductDM = array_slice($productDM, 0, 6);
+    // $limitedproductDM = array_slice($productDM, 0, 6);
     ?>
-    <?php foreach($limitedproductDM as $product){
+    <?php foreach($productNew as $product){
                 $link="?ctrl=product&view=productdetail&product_id=".$product['product_id'];
                 ?>
         <a href="<?=$link?>">

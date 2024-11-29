@@ -7,10 +7,19 @@ class Product extends database {
     }
 
     public function getALLSP() {
-        $sql = "SELECT * FROM product";
+        $sql = "SELECT * FROM product WHERE hidden = 'HIEN'";
         return $this->db->getAll($sql);
     }
 
+    public function getALLSPADMIN() {
+        $sql = "SELECT * FROM product";
+        return $this->db->getAll($sql);
+    }
+    public function getNewProducts($limit) {
+        $sql = "SELECT * FROM product WHERE hidden = 'HIEN' ORDER BY product_id DESC LIMIT " . $limit;
+        return $this->db->getAll($sql);
+    }
+    
     public function getDMById($category_id) {
         $sql = "SELECT * FROM product WHERE category_id = " .$category_id;
         return $this->db->getAll($sql, [$category_id]);
@@ -24,52 +33,71 @@ class Product extends database {
                  VALUES ("' . $name . '", ' . $price . ', "' . $description . '", "' . $img1 . '", "' . $img2 . '", ' . $quantity . ', ' . $sold . ', ' . $category_id. ')';
         return $this->db->insert($sql);
     }
-    
+
     public function deleteSP($product_id) {
         $sql = "DELETE FROM product WHERE product_id = $product_id";
         return $this->db->update($sql);
     }
 
     public function getALLdaban($sold, $limit) {
-        $sql = "SELECT * FROM product WHERE 1";
+        $sql = "SELECT * FROM product WHERE hidden = 'HIEN'";
         if ($sold > 0) {
-            $sql .= " ORDER BY sold DESC LIMIT ".$limit;
+            $sql .= " ORDER BY sold DESC LIMIT " . $limit;
         } else {
-            $sql .= " ORDER BY product_id DESC LIMIT ".$limit;
+            $sql .= " ORDER BY product_id DESC LIMIT " . $limit;
         }
         return $this->db->getAll($sql);
     }
+    
 
     public function getALLSPtrang($trang, $soluongsp) {
-        $sql = "SELECT * FROM product";
+        $sql = "SELECT * FROM product WHERE hidden = 'HIEN'";
         $limit1 = ($trang - 1) * $soluongsp;
         $limit2 = $soluongsp;
         $sql .= " ORDER BY category_id DESC LIMIT " . $limit1 . "," . $limit2;
-        return $this->db->getALL($sql);
+        return $this->db->getAll($sql);
     }
 
+
     public function getALLidDMALL($category_id, $trang, $soluongsp) {
-        $sql = "SELECT * FROM product WHERE 1";
+        $sql = "SELECT * FROM product WHERE hidden = 'HIEN'";  
         if ($category_id > 0) {
             $sql .= " AND category_id=" . $category_id;
         }
         $limit1 = ($trang - 1) * $soluongsp;
         $limit2 = $soluongsp;
         $sql .= " ORDER BY product_id DESC LIMIT " . $limit1 . "," . $limit2;
-        return $this->db->getALL($sql);
+        return $this->db->getAll($sql);
     }
     
-    public function getALLSPLQ($category_id,$id){
-        $sql = "SELECT * FROM product WHERE id!= " .$id;
-        if ($category_id > 0){
-            $sql .= "AND category_id=".$category_id;
+    public function getALLSPLQ($category_id, $id) {
+        $sql = "SELECT * FROM product WHERE product_id != " . $id . " AND hidden = 'HIEN'"; 
+        if ($category_id > 0) {
+            $sql .= " AND category_id=" . $category_id;
         }
-        return $this->db->getall($sql);
+        return $this->db->getAll($sql);
     }
+
     public function updateSP($name, $price, $description, $img1, $img2, $quantity, $sold, $category_id, $product_id) {
-        $sql = 'UPDATE product SET name="' . $name . '", price=' . $price . ', description="' . $description . '", image1="' . $img1 . '", image2="' . $img2 . '", quantity=' . $quantity . ', sold=' . $sold . ', category_id=' . $category_id . ' WHERE id=' . $product_id;
+        $sql = 'UPDATE product 
+        SET name="' . $name . '", 
+            price=' . $price . ', 
+            description="' . $description . '", 
+            image1="' . $img1 . '", 
+            image2="' . $img2 . '", 
+            quantity=' . $quantity . ', 
+            sold=' . $sold . ', 
+            category_id=' . $category_id . ' 
+        WHERE product_id=' . $product_id;
+
         return $this->db->update($sql);
     }   
+    public function toggleHidden($product_id, $currentStatus) {
+        $newStatus = ($currentStatus === 'HIEN') ? 'AN' : 'HIEN';
+        $sql = "UPDATE product SET hidden = '$newStatus' WHERE product_id = $product_id";
+        return $this->db->update($sql);
+    }
+
 }
 ?>
 

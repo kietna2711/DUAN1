@@ -34,7 +34,12 @@
                 <a href="#" class="search-icon"><i class="icon-search"></i></a>
             </div>
             <div class="right-icons">
-                <a href="?ctrl=user&view=register"><img src="public/user/img/user-removebg-preview.png" alt=""></a>
+            <a href="<?php if(isset($_SESSION['user'])) echo "?ctrl=user&view=logout";
+                        else echo "?ctrl=user&view=register"; ?>">
+                    <?php if(isset($_SESSION['user'])) echo '<i title="Đăng xuất" class="fa-solid fa-right-to-bracket"></i>';
+                        else echo '<i title="Đăng nhập-Đăng ký" class="fa-solid fa-user"></i>'; ?>
+            </a>
+                <!-- <a href="?ctrl=user&view=register"><img src="public/user/img/user-removebg-preview.png" alt=""></a> -->
                 <a href="#"><img src="public/user/img/love-removebg-preview.png" alt=""></a>
                 <a href="?ctrl=product&view=cart"><img src="public/user/img/giohang-removebg-preview.png" alt=""></i></a>
             </div>
@@ -45,8 +50,11 @@
                 <li class="has-submenu">
                     <a href="?ctrl=product&view=category">Nhóm sản phẩm</a>
                     <ul class="submenu">
-                        <li><a href="#">Chống lão hóa</a></li>
-                        <li><a href="#">Skincare</a></li>
+                    <?php foreach($categorys as $category){        
+                    $link="?ctrl=product&view=category&product_id=".$category['category_id'];
+                    ?>
+                        <li><a href="<?=$link ?>"><?=$category['category_name']?></a></li>
+                        <?php } ?>
                     </ul>
                 </li>
                 <li class="has-submenu">

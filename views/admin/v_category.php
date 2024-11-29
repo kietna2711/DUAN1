@@ -11,63 +11,34 @@
                         <th>Tên danh mục</th>
                         <th>Hình ảnh danh mục</th>
                         <th>Mô tả</th>
-                        <th>Số lượng sản phẩm</th>
+                        <!-- <th>Số lượng sản phẩm</th> -->
                         <th>Ẩn</th>
                         <th>Thao tác</th>
                     </tr>
                 </thead>
-                <tbody>
+                <?php foreach ($getALLCategory as $category): ?>
                     <tr>
-                        <td>1</td>
-                        <td>Sữa tắm</td>
+                        <td><?= $category['category_id'] ?></td>
+                        <td><?= $category['category_name'] ?></td>
                         <td>
-                            <img src="public/admin/img/avata.jpg" alt="">
+                            <img src="public/user/img/<?= $category['image_url'] ?>" alt="">
                         </td>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                             A quaerat hic iusto odio perferendis est quia sapiente consectetur, quos veniam. Provident, 
-                             enim? Sapiente similique, maiores consequuntur odit reiciendis sit voluptate.</td>
-                        <td>120</td>
+                        <td><?= $category['description'] ?></td>
+                        <!-- <td>120</td> -->
                         <td>
-                            <input type="checkbox">
+                            <form method="POST" action="Admin.php?ctrl=admin&view=categoryadmin">
+                                <input type="hidden" name="category_id" value="<?= $category['category_id'] ?>">
+                                <input type="hidden" name="current_status" value="<?= $category['hidden'] ?>">
+                                <button class="hidden" type="submit" name="toggle_status" class="btn-toggle">
+                                    <?= ($category['hidden'] === 'HIEN') ? 'Ẩn' : 'Hiện' ?>
+                                </button>
+                            </form>
                         </td>
                         <td><button class="btn-i">
-                            <i class="fa-solid fa-pen-to-square"></i>
+                           <a class="fa-solid fa-pen-to-square" href="Admin.php?ctrl=admin&view=update-category&id=<?=$category['category_id']?>"></a>
                         </button></td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Sữa tắm</td>
-                        <td>
-                            <img src="public/admin/img/avata.jpg" alt="">
-                        </td>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                             A quaerat hic iusto odio perferendis est quia sapiente consectetur, quos veniam. Provident, 
-                             enim? Sapiente similique, maiores consequuntur odit reiciendis sit voluptate.</td>
-                        <td>120</td>
-                        <td>
-                            <input type="checkbox">
-                        </td>
-                        <td><button class="btn-i">
-                            <i class="fa-solid fa-pen-to-square"></i>
-                        </button></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Sữa tắm</td>
-                        <td>
-                            <img src="public/admin/img/avata.jpg" alt="">
-                        </td>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                             A quaerat hic iusto odio perferendis est quia sapiente consectetur, quos veniam. Provident, 
-                             enim? Sapiente similique, maiores consequuntur odit reiciendis sit voluptate.</td>
-                        <td>120</td>
-                        <td>
-                            <input type="checkbox">
-                        </td>
-                        <td><button class="btn-i">
-                            <i class="fa-solid fa-pen-to-square"></i>
-                        </button></td>
-                    </tr>
+                <?php endforeach; ?>
                 </tbody>
             </table>
         </div>

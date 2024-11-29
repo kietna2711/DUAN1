@@ -7,9 +7,11 @@ if (isset($_GET['view'])) {
             include_once "models/m_product.php";
             include_once "models/m_category.php";
             $db = new Category();
-            $category = $db->getALLDM();
-            // Khởi tạo đối tượng Sanpham
             $products = new Product();
+            $categorys = $db->getALLDM();
+            // var_dump($category);
+            // Khởi tạo đối tượng Sanpham
+
             // $product=$_GET['categiry_id'];
             // $productct=$product->getDMById($pcategiry_id);
             $productHot=$products->getALLdaban(0,8);
@@ -39,7 +41,10 @@ if (isset($_GET['view'])) {
             include_once "models/m_database.php";
             include_once "models/m_product.php";
             include_once "models/m_category.php";
+            $db = new Category();
+            $categorys = $db->getALLDM();
             $product = new Product();
+            $productHot=$product->getALLdaban(0,8);
             $id = $_GET["product_id"];
             $productDetail = $product->getById($id);
             $category_id = $productDetail[0]['category_id'];
@@ -53,6 +58,12 @@ if (isset($_GET['view'])) {
             include_once "models/m_database.php";
             include_once "models/m_cart.php";
             include_once "models/m_user.php";
+            include_once "models/m_product.php";
+            include_once "models/m_category.php";
+            $db = new Category();
+            $categorys = $db->getALLDM();
+            $product =new Product();
+            $productHot=$product->getALLdaban(0,8);
             $eror = '';
             if (isset($_SESSION['user']['user_id'])) {
                 $user_id = $_SESSION['user']['user_id'];
